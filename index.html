@@ -20,6 +20,7 @@
 
         <form id="proposal-form" class="bg-white p-8 rounded-lg shadow-md space-y-6">
 
+            <!-- Section Client -->
             <fieldset class="border p-4 rounded-md">
                 <legend class="text-xl font-semibold text-blue-800 px-2">Informations Client</legend>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
@@ -32,7 +33,6 @@
                         <input type="text" id="prenomClient" class="w-full border-gray-300 rounded-md shadow-sm" required placeholder="Ex: Jean">
                     </div>
                 </div>
-                <!-- MODIFICATION ICI : Ajout du choix de genre -->
                 <div class="mt-4">
                     <label class="block text-sm font-medium text-gray-700 mb-2">Genre du contact</label>
                     <div class="flex items-center space-x-6">
@@ -48,7 +48,7 @@
                 </div>
             </fieldset>
 
-            <!-- Le reste du formulaire ne change pas -->
+            <!-- Section Proposition -->
             <fieldset class="border p-4 rounded-md">
                 <legend class="text-xl font-semibold text-blue-800 px-2">Détails de la Proposition</legend>
                 <div class="space-y-4 mt-4">
@@ -62,7 +62,45 @@
                     </div>
                 </div>
             </fieldset>
+            
+            <!-- MODIFICATION ICI : Ajout d'une section pour la Page 4 -->
+            <fieldset class="border p-4 rounded-md">
+                <legend class="text-xl font-semibold text-blue-800 px-2">Personnalisation Recommandation (Page 4)</legend>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-4 mt-4">
+                    <!-- Raison 1 -->
+                    <div class="md:col-span-2 font-medium text-gray-600 border-b pb-1">Raison 1</div>
+                    <div>
+                        <label for="raison1_titre" class="block text-sm font-medium text-gray-700 mb-1">Titre</label>
+                        <input type="text" id="raison1_titre" class="w-full border-gray-300 rounded-md shadow-sm" value="Réponse Directe">
+                    </div>
+                    <div>
+                        <label for="raison1_texte" class="block text-sm font-medium text-gray-700 mb-1">Texte</label>
+                        <textarea id="raison1_texte" rows="3" class="w-full border-gray-300 rounded-md shadow-sm">Elle répond directement à votre défi principal en vous dotant d'une vitrine professionnelle sur-mesure qui reflète enfin la qualité de votre travail.</textarea>
+                    </div>
+                    <!-- Raison 2 -->
+                    <div class="md:col-span-2 font-medium text-gray-600 border-b pb-1 pt-2">Raison 2</div>
+                    <div>
+                        <label for="raison2_titre" class="block text-sm font-medium text-gray-700 mb-1">Titre</label>
+                        <input type="text" id="raison2_titre" class="w-full border-gray-300 rounded-md shadow-sm" value="Sérénité Totale">
+                    </div>
+                    <div>
+                        <label for="raison2_texte" class="block text-sm font-medium text-gray-700 mb-1">Texte</label>
+                        <textarea id="raison2_texte" rows="3" class="w-full border-gray-300 rounded-md shadow-sm">Elle vous offre une tranquillité d'esprit complète, gérant pour vous la technique (Pack Sérénité) et la conformité légale (Pack RGPD).</textarea>
+                    </div>
+                    <!-- Raison 3 -->
+                    <div class="md:col-span-2 font-medium text-gray-600 border-b pb-1 pt-2">Raison 3</div>
+                    <div>
+                        <label for="raison3_titre" class="block text-sm font-medium text-gray-700 mb-1">Titre</label>
+                        <input type="text" id="raison3_titre" class="w-full border-gray-300 rounded-md shadow-sm" value="Meilleur Investissement">
+                    </div>
+                    <div>
+                        <label for="raison3_texte" class="block text-sm font-medium text-gray-700 mb-1">Texte</label>
+                        <textarea id="raison3_texte" rows="3" class="w-full border-gray-300 rounded-md shadow-sm">Elle représente le meilleur investissement pour établir une fondation digitale solide et professionnelle, rapidement et sans superflu.</textarea>
+                    </div>
+                </div>
+            </fieldset>
 
+            <!-- Section Diagnostic -->
             <fieldset class="border p-4 rounded-md">
                 <legend class="text-xl font-semibold text-blue-800 px-2">Personnalisation du Diagnostic (Page 3)</legend>
                 <div class="space-y-4 mt-4">
