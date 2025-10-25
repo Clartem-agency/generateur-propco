@@ -5,23 +5,29 @@ document.getElementById('proposal-form').addEventListener('submit', async functi
     generateBtn.textContent = 'Génération en cours...';
     generateBtn.disabled = true;
 
-    // NOUVELLE LOGIQUE ICI : Déterminer la salutation
     const genre = document.querySelector('input[name="genre"]:checked').value;
     const salutation = (genre === 'femme') ? 'Chère' : 'Cher';
 
-    // 1. Récupérer les valeurs du formulaire
     const values = {
         nomSocieteClient: document.getElementById('nomSocieteClient').value,
         prenomClient: document.getElementById('prenomClient').value,
-        salutation: salutation, // Ajout de la nouvelle variable
+        salutation: salutation,
         dateEnvoi: new Date(document.getElementById('dateEnvoi').value).toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' }),
         objectifPrincipal: document.getElementById('objectifPrincipal').value,
+        
+        // MODIFICATION ICI : Ajout des variables de la page 4
+        raison1_titre: document.getElementById('raison1_titre').value,
+        raison1_texte: document.getElementById('raison1_texte').value,
+        raison2_titre: document.getElementById('raison2_titre').value,
+        raison2_texte: document.getElementById('raison2_texte').value,
+        raison3_titre: document.getElementById('raison3_titre').value,
+        raison3_texte: document.getElementById('raison3_texte').value,
+
         situationActuelle: document.getElementById('situationActuelle').value,
         defisConcrets: document.getElementById('defisConcrets').value,
         objectifsCommuns: document.getElementById('objectifsCommuns').value,
     };
 
-    // 2. Formater les listes en HTML
     const formatList = (text, type) => {
         return text
             .split('\n')
@@ -41,17 +47,14 @@ document.getElementById('proposal-form').addEventListener('submit', async functi
     values.defisConcrets = formatList(values.defisConcrets, 'defis');
     values.objectifsCommuns = formatList(values.objectifsCommuns, 'objectifs');
 
-    // 3. Créer une instance de JSZip
     const zip = new JSZip();
     
-    // 4. Lister les fichiers modèles
     const templateFiles = [
         'page1-propco-essentiel.html', 'page2-propco-essentiel.html', 'page3-propco-essentiel.html',
         'page4-propco-essentiel.html', 'page5-propco-essentiel.html', 'page6-propco-essentiel.html',
         'page7-propco-essentiel.html', 'page8-propco-essentiel.html', 'page9-propco-essentiel.html'
     ];
 
-    // 5. Boucler sur chaque modèle et remplacer les placeholders
     for (const fileName of templateFiles) {
         try {
             const response = await fetch(`templates/${fileName}`);
@@ -75,7 +78,6 @@ document.getElementById('proposal-form').addEventListener('submit', async functi
         }
     }
 
-    // 6. Générer le ZIP
     zip.generateAsync({ type: 'blob' })
         .then(function(content) {
             const link = document.createElement('a');
@@ -92,5 +94,4 @@ document.getElementById('proposal-form').addEventListener('submit', async functi
         });
 });
 
-// Initialiser la date du jour par défaut
 document.getElementById('dateEnvoi').valueAsDate = new Date();
