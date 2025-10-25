@@ -1,14 +1,19 @@
 document.getElementById('proposal-form').addEventListener('submit', async function(event) {
-    event.preventDefault(); // Empêche l'envoi classique du formulaire
+    event.preventDefault();
 
     const generateBtn = document.getElementById('generate-btn');
     generateBtn.textContent = 'Génération en cours...';
     generateBtn.disabled = true;
 
+    // NOUVELLE LOGIQUE ICI : Déterminer la salutation
+    const genre = document.querySelector('input[name="genre"]:checked').value;
+    const salutation = (genre === 'femme') ? 'Chère' : 'Cher';
+
     // 1. Récupérer les valeurs du formulaire
     const values = {
         nomSocieteClient: document.getElementById('nomSocieteClient').value,
         prenomClient: document.getElementById('prenomClient').value,
+        salutation: salutation, // Ajout de la nouvelle variable
         dateEnvoi: new Date(document.getElementById('dateEnvoi').value).toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' }),
         objectifPrincipal: document.getElementById('objectifPrincipal').value,
         situationActuelle: document.getElementById('situationActuelle').value,
@@ -16,34 +21,49 @@ document.getElementById('proposal-form').addEventListener('submit', async functi
         objectifsCommuns: document.getElementById('objectifsCommuns').value,
     };
 
-    // 2. Créer une instance de JSZip
+    // 2. Formater les listes en HTML
+    const formatList = (text, type) => {
+        return text
+            .split('\n')
+            .filter(line => line.trim() !== '')
+            .map(line => {
+                if (type === 'defis') {
+                    return `<li class="flex items-start"><span class="text-warm-orange mt-1 mr-3">&#10007;</span>${line.trim()}</li>`;
+                }
+                if (type === 'objectifs') {
+                    return `<li class="flex items-start"><span class="text-success-green mt-1 mr-3">&#10003;</span><strong>${line.trim()}</strong></li>`;
+                }
+                return '';
+            })
+            .join('\n');
+    };
+
+    values.defisConcrets = formatList(values.defisConcrets, 'defis');
+    values.objectifsCommuns = formatList(values.objectifsCommuns, 'objectifs');
+
+    // 3. Créer une instance de JSZip
     const zip = new JSZip();
     
-    // 3. Lister les fichiers modèles à traiter
+    // 4. Lister les fichiers modèles
     const templateFiles = [
         'page1-propco-essentiel.html', 'page2-propco-essentiel.html', 'page3-propco-essentiel.html',
         'page4-propco-essentiel.html', 'page5-propco-essentiel.html', 'page6-propco-essentiel.html',
         'page7-propco-essentiel.html', 'page8-propco-essentiel.html', 'page9-propco-essentiel.html'
     ];
 
-    // 4. Boucler sur chaque modèle, le charger, remplacer les placeholders
+    // 5. Boucler sur chaque modèle et remplacer les placeholders
     for (const fileName of templateFiles) {
         try {
-            // Charger le contenu du fichier modèle
             const response = await fetch(`templates/${fileName}`);
-            if (!response.ok) {
-                throw new Error(`Fichier modèle introuvable: ${fileName}`);
-            }
+            if (!response.ok) throw new Error(`Fichier modèle introuvable: ${fileName}`);
+            
             let content = await response.text();
 
-            // Remplacer chaque placeholder par sa valeur
             for (const key in values) {
-                // Utilise une expression régulière avec le flag 'g' pour remplacer TOUTES les occurrences
                 const regex = new RegExp(`{{${key}}}`, 'g');
                 content = content.replace(regex, values[key]);
             }
 
-            // Ajouter le fichier modifié au ZIP
             zip.file(fileName, content);
 
         } catch (error) {
@@ -51,11 +71,11 @@ document.getElementById('proposal-form').addEventListener('submit', async functi
             alert(`Une erreur est survenue lors du traitement du fichier ${fileName}. Vérifiez la console.`);
             generateBtn.textContent = 'Générer la Proposition (.zip)';
             generateBtn.disabled = false;
-            return; // Arrêter le processus
+            return;
         }
     }
 
-    // 5. Générer le fichier ZIP et déclencher le téléchargement
+    // 6. Générer le ZIP
     zip.generateAsync({ type: 'blob' })
         .then(function(content) {
             const link = document.createElement('a');
@@ -65,7 +85,7 @@ document.getElementById('proposal-form').addEventListener('submit', async functi
             document.body.appendChild(link);
             link.click();
             document.body.removeChild(link);
-            URL.revokeObjectURL(link.href); // Libérer la mémoire
+            URL.revokeObjectURL(link.href);
             
             generateBtn.textContent = 'Générer la Proposition (.zip)';
             generateBtn.disabled = false;
