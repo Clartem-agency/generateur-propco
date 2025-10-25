@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Remplacé par le placeholder -->
     <title>Introduction - Proposition pour {{nomSocieteClient}}</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -40,15 +39,14 @@
         </header>
 
         <main class="mt-16 text-lg leading-relaxed text-neutral-dark flex-grow">
-            <!-- Remplacé par le placeholder -->
+            <!-- MODIFICATION ICI : Remplacement de "Cher/Chère" par {{salutation}} -->
             <h3 class="text-3xl font-bold text-neutral-dark mb-8">
-                Cher/Chère {{prenomClient}},
+                {{salutation}} {{prenomClient}},
             </h3>
 
             <div class="space-y-6">
                 <p>
                     Suite à notre passionnant Appel Clarté, cette proposition détaille la solution que j'ai conçue pour répondre à votre objectif principal : 
-                    <!-- Remplacé par le placeholder -->
                     <strong class="text-clarity-blue">{{objectifPrincipal}}</strong>
                 </p>
 
