@@ -20,7 +20,6 @@
 
         <form id="proposal-form" class="bg-white p-8 rounded-lg shadow-md space-y-6">
 
-            <!-- Section Client -->
             <fieldset class="border p-4 rounded-md">
                 <legend class="text-xl font-semibold text-blue-800 px-2">Informations Client</legend>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
@@ -33,9 +32,23 @@
                         <input type="text" id="prenomClient" class="w-full border-gray-300 rounded-md shadow-sm" required placeholder="Ex: Jean">
                     </div>
                 </div>
+                <!-- MODIFICATION ICI : Ajout du choix de genre -->
+                <div class="mt-4">
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Genre du contact</label>
+                    <div class="flex items-center space-x-6">
+                        <div class="flex items-center">
+                            <input type="radio" id="genreHomme" name="genre" value="homme" class="h-4 w-4 text-blue-600 border-gray-300" checked>
+                            <label for="genreHomme" class="ml-2 block text-sm text-gray-900">Homme</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input type="radio" id="genreFemme" name="genre" value="femme" class="h-4 w-4 text-blue-600 border-gray-300">
+                            <label for="genreFemme" class="ml-2 block text-sm text-gray-900">Femme</label>
+                        </div>
+                    </div>
+                </div>
             </fieldset>
 
-            <!-- Section Proposition -->
+            <!-- Le reste du formulaire ne change pas -->
             <fieldset class="border p-4 rounded-md">
                 <legend class="text-xl font-semibold text-blue-800 px-2">Détails de la Proposition</legend>
                 <div class="space-y-4 mt-4">
@@ -50,7 +63,6 @@
                 </div>
             </fieldset>
 
-            <!-- Section Diagnostic -->
             <fieldset class="border p-4 rounded-md">
                 <legend class="text-xl font-semibold text-blue-800 px-2">Personnalisation du Diagnostic (Page 3)</legend>
                 <div class="space-y-4 mt-4">
@@ -59,14 +71,12 @@
                         <textarea id="situationActuelle" rows="3" class="w-full border-gray-300 rounded-md shadow-sm" required>Lors de notre échange, vous avez mentionné que votre présence en ligne actuelle ne reflète plus la qualité de votre travail. Vous m'avez confié que vous n'osiez "presque plus partager le lien de votre site".</textarea>
                     </div>
                     <div>
-                        <!-- MODIFICATION ICI : Le label et le contenu sont simplifiés -->
                         <label for="defisConcrets" class="block text-sm font-medium text-gray-700 mb-1">Défis Concrets (un par ligne, texte simple)</label>
                         <textarea id="defisConcrets" rows="4" class="w-full border-gray-300 rounded-md shadow-sm" required>Un manque de crédibilité perçu qui vous oblige à "sur-justifier" votre valeur.
 L'absence d'un message clair qui perd les visiteurs et ne convertit pas leur intérêt.
 La complexité et l'inquiétude liées aux obligations légales comme le RGPD.</textarea>
                     </div>
                     <div>
-                        <!-- MODIFICATION ICI : Le label et le contenu sont simplifiés -->
                         <label for="objectifsCommuns" class="block text-sm font-medium text-gray-700 mb-1">Objectifs Communs (un par ligne, texte simple)</label>
                         <textarea id="objectifsCommuns" rows="4" class="w-full border-gray-300 rounded-md shadow-sm" required>Moderniser votre image professionnelle pour inspirer une confiance immédiate.
 Clarifier votre proposition de valeur pour que vos clients idéaux vous comprennent.
