@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Remplacé par le placeholder -->
     <title>Recommandation - Proposition pour {{nomSocieteClient}}</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -50,50 +49,49 @@
                 <h4 class="mt-2 text-4xl font-extrabold text-deep-blue">La Formule Site Clarté Essentiel</h4>
             </div>
 
-            <div class="mt-12">
+            <!-- MODIFICATION ICI : Remplacement de la grille par une liste de "features" -->
+            <div class="mt-12 space-y-10">
                 <h4 class="text-xl font-bold text-neutral-dark mb-6 text-center">Pourquoi cette solution est la plus pertinente pour vous ?</h4>
 
-                <div class="grid md:grid-cols-3 gap-6 text-center">
-                    
-                    <div class="p-6 bg-gray-50 rounded-lg">
-                        <div class="w-12 h-12 bg-clarity-blue text-white rounded-full flex items-center justify-center mx-auto">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                            </svg>
-                        </div>
-                        <h5 class="mt-4 font-bold">Réponse Directe</h5>
-                        <p class="mt-2 text-sm text-neutral-light">
-                            Elle répond directement à votre défi principal en vous dotant d'une vitrine professionnelle sur-mesure qui reflète enfin la qualité de votre travail.
-                        </p>
+                <!-- Raison 1 -->
+                <div class="flex items-start">
+                    <div class="flex-shrink-0 w-16 h-16 bg-soft-blue text-clarity-blue rounded-full flex items-center justify-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
                     </div>
-
-                    <div class="p-6 bg-gray-50 rounded-lg">
-                         <div class="w-12 h-12 bg-clarity-blue text-white rounded-full flex items-center justify-center mx-auto">
-                           <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                            </svg>
-                        </div>
-                        <h5 class="mt-4 font-bold">Sérénité Totale</h5>
-                        <p class="mt-2 text-sm text-neutral-light">
-                            Elle vous offre une tranquillité d'esprit complète, gérant pour vous la technique (Pack Sérénité) et la conformité légale (Pack RGPD).
-                        </p>
+                    <div class="ml-6">
+                        <h4 class="text-xl font-bold text-neutral-dark">{{raison1_titre}}</h4>
+                        <p class="mt-1 text-neutral-light leading-relaxed">{{raison1_texte}}</p>
                     </div>
+                </div>
 
-                    <div class="p-6 bg-gray-50 rounded-lg">
-                         <div class="w-12 h-12 bg-clarity-blue text-white rounded-full flex items-center justify-center mx-auto">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
-                            </svg>
-                        </div>
-                        <h5 class="mt-4 font-bold">Meilleur Investissement</h5>
-                        <p class="mt-2 text-sm text-neutral-light">
-                            Elle représente le meilleur investissement pour établir une fondation digitale solide et professionnelle, rapidement et sans superflu.
-                        </p>
+                <!-- Raison 2 -->
+                <div class="flex items-start">
+                    <div class="flex-shrink-0 w-16 h-16 bg-soft-blue text-clarity-blue rounded-full flex items-center justify-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                        </svg>
                     </div>
+                    <div class="ml-6">
+                        <h4 class="text-xl font-bold text-neutral-dark">{{raison2_titre}}</h4>
+                        <p class="mt-1 text-neutral-light leading-relaxed">{{raison2_texte}}</p>
+                    </div>
+                </div>
 
+                <!-- Raison 3 -->
+                <div class="flex items-start">
+                    <div class="flex-shrink-0 w-16 h-16 bg-soft-blue text-clarity-blue rounded-full flex items-center justify-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                        </svg>
+                    </div>
+                    <div class="ml-6">
+                        <h4 class="text-xl font-bold text-neutral-dark">{{raison3_titre}}</h4>
+                        <p class="mt-1 text-neutral-light leading-relaxed">{{raison3_texte}}</p>
+                    </div>
                 </div>
             </div>
-
         </main>
 
         <footer class="mt-16 pt-4 border-t border-gray-200 text-center">
