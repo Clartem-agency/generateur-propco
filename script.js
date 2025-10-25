@@ -5,17 +5,19 @@ document.getElementById('proposal-form').addEventListener('submit', async functi
     generateBtn.textContent = 'Génération en cours...';
     generateBtn.disabled = true;
 
+    // MODIFICATION ICI : On définit les deux variables liées au genre en même temps
     const genre = document.querySelector('input[name="genre"]:checked').value;
     const salutation = (genre === 'femme') ? 'Chère' : 'Cher';
+    const pret_adjectif = (genre === 'femme') ? 'Prête' : 'Prêt';
 
     const values = {
         nomSocieteClient: document.getElementById('nomSocieteClient').value,
         prenomClient: document.getElementById('prenomClient').value,
         salutation: salutation,
+        pret_adjectif: pret_adjectif, // Ajout de la nouvelle variable
         dateEnvoi: new Date(document.getElementById('dateEnvoi').value).toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' }),
         objectifPrincipal: document.getElementById('objectifPrincipal').value,
         
-        // MODIFICATION ICI : Ajout des variables de la page 4
         raison1_titre: document.getElementById('raison1_titre').value,
         raison1_texte: document.getElementById('raison1_texte').value,
         raison2_titre: document.getElementById('raison2_titre').value,
