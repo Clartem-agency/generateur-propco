@@ -14,32 +14,25 @@
         }
     </style>
 </head>
-<!-- MODIFIÉ : Fond légèrement plus froid pour un meilleur contraste -->
 <body class="bg-slate-100 text-slate-800">
 
-    <!-- MODIFIÉ : Augmentation de la taille max et du padding pour plus d'espace -->
     <div class="container mx-auto p-4 md:p-10 max-w-5xl">
         <header class="text-center mb-12">
-            <!-- MODIFIÉ : Titre plus impactant avec un dégradé -->
             <h1 class="text-4xl md:text-5xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
                 Générateur de Proposition
             </h1>
             <p class="text-slate-500 mt-3 text-lg">Choisissez une offre et remplissez les champs pour générer une proposition personnalisée.</p>
         </header>
 
-        <!-- MODIFIÉ : L'espacement est maintenant géré par les fieldsets pour un meilleur contrôle -->
         <form id="proposal-form" class="space-y-10">
 
             <!-- Section Choix de l'Offre -->
-            <!-- MODIFIÉ : Nouveau style pour les sections "fieldset" -->
             <fieldset class="bg-white p-6 rounded-lg shadow-sm border border-slate-200">
-                <!-- MODIFIÉ : Nouveau style pour les titres de section "legend" -->
                 <legend class="inline-block px-4 py-1 text-base font-semibold text-blue-700 bg-blue-100 rounded-md -mt-10">
                     1. Choix de l'Offre
                 </legend>
                 <div class="mt-4">
                     <label for="offer-select" class="block text-sm font-medium text-slate-600 mb-2">Sélectionnez la formule à générer :</label>
-                    <!-- MODIFIÉ : Application de la classe .form-input -->
                     <select id="offer-select" class="form-input">
                         <option value="essentiel">Site Clarté Essentiel</option>
                         <option value="interaction">Site Clarté Interaction</option>
@@ -126,51 +119,57 @@
             </fieldset>
 
             <!-- Section Recommandation (Page 4) -->
+            <!-- MODIFIÉ ICI : La grille a été remplacée par une disposition verticale pour donner toute la largeur aux champs de texte. -->
             <fieldset class="bg-white p-6 rounded-lg shadow-sm border border-slate-200">
                 <legend class="inline-block px-4 py-1 text-base font-semibold text-blue-700 bg-blue-100 rounded-md -mt-10">
                     5. Personnalisation de la Recommandation
                 </legend>
-                <div class="space-y-8 mt-4">
+                <div class="space-y-6 mt-4">
                     <!-- Raison 1 -->
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-4 p-4 bg-slate-50 rounded-md border">
-                         <div class="md:col-span-2 font-medium text-slate-500 border-b pb-2 mb-2">Raison 1</div>
-                        <div>
-                            <label for="raison1_titre" class="block text-sm font-medium text-slate-600 mb-2">Titre</label>
-                            <input type="text" id="raison1_titre" class="form-input">
-                        </div>
-                        <div>
-                            <label for="raison1_texte" class="block text-sm font-medium text-slate-600 mb-2">Texte</label>
-                            <textarea id="raison1_texte" rows="3" class="form-input"></textarea>
+                    <div class="p-4 bg-slate-50 rounded-md border border-slate-200">
+                        <h4 class="font-medium text-slate-500 border-b border-slate-200 pb-2 mb-4">Raison 1</h4>
+                        <div class="space-y-4">
+                            <div>
+                                <label for="raison1_titre" class="block text-sm font-medium text-slate-600 mb-2">Titre</label>
+                                <input type="text" id="raison1_titre" class="form-input">
+                            </div>
+                            <div>
+                                <label for="raison1_texte" class="block text-sm font-medium text-slate-600 mb-2">Texte</label>
+                                <textarea id="raison1_texte" rows="3" class="form-input"></textarea>
+                            </div>
                         </div>
                     </div>
                      <!-- Raison 2 -->
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-4 p-4 bg-slate-50 rounded-md border">
-                         <div class="md:col-span-2 font-medium text-slate-500 border-b pb-2 mb-2">Raison 2</div>
-                        <div>
-                            <label for="raison2_titre" class="block text-sm font-medium text-slate-600 mb-2">Titre</label>
-                            <input type="text" id="raison2_titre" class="form-input">
-                        </div>
-                        <div>
-                            <label for="raison2_texte" class="block text-sm font-medium text-slate-600 mb-2">Texte</label>
-                            <textarea id="raison2_texte" rows="3" class="form-input"></textarea>
+                    <div class="p-4 bg-slate-50 rounded-md border border-slate-200">
+                        <h4 class="font-medium text-slate-500 border-b border-slate-200 pb-2 mb-4">Raison 2</h4>
+                        <div class="space-y-4">
+                            <div>
+                                <label for="raison2_titre" class="block text-sm font-medium text-slate-600 mb-2">Titre</label>
+                                <input type="text" id="raison2_titre" class="form-input">
+                            </div>
+                            <div>
+                                <label for="raison2_texte" class="block text-sm font-medium text-slate-600 mb-2">Texte</label>
+                                <textarea id="raison2_texte" rows="3" class="form-input"></textarea>
+                            </div>
                         </div>
                     </div>
                      <!-- Raison 3 -->
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-4 p-4 bg-slate-50 rounded-md border">
-                         <div class="md:col-span-2 font-medium text-slate-500 border-b pb-2 mb-2">Raison 3</div>
-                        <div>
-                            <label for="raison3_titre" class="block text-sm font-medium text-slate-600 mb-2">Titre</label>
-                            <input type="text" id="raison3_titre" class="form-input">
-                        </div>
-                        <div>
-                            <label for="raison3_texte" class="block text-sm font-medium text-slate-600 mb-2">Texte</label>
-                            <textarea id="raison3_texte" rows="3" class="form-input"></textarea>
+                    <div class="p-4 bg-slate-50 rounded-md border border-slate-200">
+                        <h4 class="font-medium text-slate-500 border-b border-slate-200 pb-2 mb-4">Raison 3</h4>
+                        <div class="space-y-4">
+                            <div>
+                                <label for="raison3_titre" class="block text-sm font-medium text-slate-600 mb-2">Titre</label>
+                                <input type="text" id="raison3_titre" class="form-input">
+                            </div>
+                            <div>
+                                <label for="raison3_texte" class="block text-sm font-medium text-slate-600 mb-2">Texte</label>
+                                <textarea id="raison3_texte" rows="3" class="form-input"></textarea>
+                            </div>
                         </div>
                     </div>
                 </div>
             </fieldset>
 
-            <!-- MODIFIÉ : Bouton plus visible et centré, avec une icône -->
             <div class="text-center pt-6">
                 <button type="submit" id="generate-btn" class="inline-flex items-center justify-center bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-10 rounded-lg shadow-lg transition-transform transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-blue-300">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-3" viewBox="0 0 20 20" fill="currentColor">
