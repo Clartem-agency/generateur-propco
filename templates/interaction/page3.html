@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Remplacé par le placeholder -->
     <title>Diagnostic - Proposition pour {{nomSocieteClient}}</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -59,7 +58,6 @@
                     </div>
                     <div class="mt-4 pl-16 border-l-2 border-gray-200 ml-6">
                         <p class="text-neutral-light leading-relaxed">
-                            <!-- Remplacé par le placeholder -->
                             {{situationActuelle}}
                         </p>
                     </div>
@@ -76,13 +74,9 @@
                         <h4 class="ml-4 text-xl font-bold text-neutral-dark">Les Défis Concrets</h4>
                     </div>
                     <div class="mt-4 pl-16 border-l-2 border-gray-200 ml-6">
-                        <p class="text-neutral-light leading-relaxed mb-4">
-                            Ce fonctionnement manuel a des conséquences directes sur votre productivité :
-                        </p>
-                        <!-- Remplacé par le placeholder -->
-                        <ul class="space-y-3">
-                            {{defisConcrets}}
-                        </ul>
+                        <!-- MODIFIÉ ICI -->
+                        <p class="text-neutral-light leading-relaxed mb-4">{{introDefis}}</p>
+                        <ul class="space-y-3">{{defisConcrets}}</ul>
                     </div>
                 </div>
 
@@ -97,13 +91,9 @@
                         <h4 class="ml-4 text-xl font-bold text-neutral-dark">Nos Objectifs Communs</h4>
                     </div>
                     <div class="mt-4 pl-16 border-l-2 border-gray-200 ml-6">
-                         <p class="text-neutral-light leading-relaxed mb-4">
-                            Notre collaboration visera donc à transformer votre site en un véritable outil de productivité :
-                        </p>
-                        <!-- Remplacé par le placeholder -->
-                        <ul class="space-y-3">
-                            {{objectifsCommuns}}
-                        </ul>
+                         <!-- MODIFIÉ ICI -->
+                        <p class="text-neutral-light leading-relaxed mb-4">{{introObjectifs}}</p>
+                        <ul class="space-y-3">{{objectifsCommuns}}</ul>
                     </div>
                 </div>
             </div>

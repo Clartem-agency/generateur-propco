@@ -20,7 +20,9 @@
 
         <form id="proposal-form" class="bg-white p-8 rounded-lg shadow-md space-y-6">
 
-            <!-- MODIFICATION ICI : Ajout du sélecteur d'offre -->
+            <!-- ... (Les sections "Choix de l'Offre", "Informations Client", "Détails de la Proposition", "Personnalisation Recommandation" ne changent pas) ... -->
+            
+            <!-- Section Choix de l'Offre -->
             <fieldset class="border p-4 rounded-md">
                 <legend class="text-xl font-semibold text-blue-800 px-2">Choix de l'Offre</legend>
                 <div class="mt-4">
@@ -109,7 +111,7 @@
                 </div>
             </fieldset>
 
-            <!-- Section Diagnostic Page 3 -->
+            <!-- Section Diagnostic -->
             <fieldset class="border p-4 rounded-md">
                 <legend class="text-xl font-semibold text-blue-800 px-2">Personnalisation du Diagnostic (Page 3)</legend>
                 <div class="space-y-4 mt-4">
@@ -117,9 +119,20 @@
                         <label for="situationActuelle" class="block text-sm font-medium text-gray-700 mb-1">Situation Actuelle (paragraphe)</label>
                         <textarea id="situationActuelle" rows="3" class="w-full border-gray-300 rounded-md shadow-sm" required></textarea>
                     </div>
+                    
+                    <!-- MODIFICATION ICI : Ajout des champs pour les phrases d'intro -->
+                    <div>
+                        <label for="introDefis" class="block text-sm font-medium text-gray-700 mb-1">Phrase d'introduction pour les Défis</label>
+                        <textarea id="introDefis" rows="2" class="w-full border-gray-300 rounded-md shadow-sm" required></textarea>
+                    </div>
                     <div>
                         <label for="defisConcrets" class="block text-sm font-medium text-gray-700 mb-1">Défis Concrets (un par ligne, texte simple)</label>
                         <textarea id="defisConcrets" rows="4" class="w-full border-gray-300 rounded-md shadow-sm" required></textarea>
+                    </div>
+                    
+                    <div>
+                        <label for="introObjectifs" class="block text-sm font-medium text-gray-700 mb-1">Phrase d'introduction pour les Objectifs</label>
+                        <textarea id="introObjectifs" rows="2" class="w-full border-gray-300 rounded-md shadow-sm" required></textarea>
                     </div>
                     <div>
                         <label for="objectifsCommuns" class="block text-sm font-medium text-gray-700 mb-1">Objectifs Communs (un par ligne, texte simple)</label>
