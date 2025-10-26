@@ -1,3 +1,62 @@
+// --- BASE DE DONNÉES DES OFFRES ---
+const offerData = {
+    essentiel: {
+        name: "Site Clarté Essentiel",
+        price: "799,00 €",
+        deposit: "399,50 €",
+        objective: "moderniser votre image professionnelle pour qu'elle soit enfin à la hauteur de la qualité de vos services.",
+        situation: `Lors de notre échange, vous avez mentionné que votre présence en ligne actuelle ne reflète plus la qualité de votre travail. Vous m'avez confié que vous n'osiez "presque plus partager le lien de votre site".`,
+        challenges: `Un manque de crédibilité perçu qui vous oblige à "sur-justifier" votre valeur.\nL'absence d'un message clair qui perd les visiteurs et ne convertit pas leur intérêt.\nLa complexité et l'inquiétude liées aux obligations légales comme le RGPD.`,
+        goals: `Moderniser votre image professionnelle pour inspirer une confiance immédiate.\nClarifier votre proposition de valeur pour que vos clients idéaux vous comprennent.\nVous offrir une tranquillité d'esprit totale, tant sur le plan technique que légal.`,
+        reason1_title: "Réponse Directe",
+        reason1_text: "Elle répond directement à votre défi principal en vous dotant d'une vitrine professionnelle sur-mesure qui reflète enfin la qualité de votre travail.",
+        reason2_title: "Sérénité Totale",
+        reason2_text: "Elle vous offre une tranquillité d'esprit complète, gérant pour vous la technique (Pack Sérénité) et la conformité légale (Pack RGPD).",
+        reason3_title: "Meilleur Investissement",
+        reason3_text: "Elle représente le meilleur investissement pour établir une fondation digitale solide et professionnelle, rapidement et sans superflu."
+    },
+    interaction: {
+        name: "Site Clarté Interaction",
+        price: "999,00 €",
+        deposit: "499,50 €",
+        objective: "automatiser votre prise de rendez-vous pour vous libérer un temps administratif précieux.",
+        situation: `Lors de notre échange, vous avez souligné que votre processus actuel de prise de rendez-vous est entièrement manuel. Vous m'avez expliqué que les échanges d'emails pour trouver un créneau sont "chronophages et inefficaces".`,
+        challenges: `Une perte de temps et de charge mentale considérable que vous pourriez dédier à vos clients.\nUn risque de perdre des prospects impatients qui abandonnent face à la complexité du processus.\nUne expérience client qui manque de fluidité et de professionnalisme dès le premier contact.`,
+        goals: `Automatiser 100% de votre prise de rendez-vous pour libérer votre temps et votre esprit.\nOffrir une expérience de réservation fluide et professionnelle qui convertit.\nConstruire votre "assistant digital personnel" qui travaille pour vous 24/7.`,
+        reason1_title: "Ciblage Précis",
+        reason1_text: "Elle est spécifiquement conçue pour résoudre votre défi n°1 : l'automatisation. Nous ne faisons pas qu'ajouter un bouton, nous construisons un système de conversion.",
+        reason2_title: "Gain de Temps Immédiat",
+        reason2_text: "Dès le jour de la mise en ligne, votre \"assistant digital\" commencera à vous faire gagner des heures, en gérant vos prises de rendez-vous 24/7.",
+        reason3_title: "Meilleur Retour sur Investissement",
+        reason3_text: "Le temps que vous allez économiser et les prospects que vous n'allez plus perdre font de cette formule l'investissement le plus rentable pour votre productivité."
+    }
+};
+
+// --- FONCTIONS ---
+
+// Met à jour les champs du formulaire avec les données de l'offre sélectionnée
+function updateFormDefaults() {
+    const selectedOfferKey = document.getElementById('offer-select').value;
+    const data = offerData[selectedOfferKey];
+
+    document.getElementById('objectifPrincipal').value = data.objective;
+    document.getElementById('situationActuelle').value = data.situation;
+    document.getElementById('defisConcrets').value = data.challenges;
+    document.getElementById('objectifsCommuns').value = data.goals;
+    document.getElementById('raison1_titre').value = data.reason1_title;
+    document.getElementById('raison1_texte').value = data.reason1_text;
+    document.getElementById('raison2_titre').value = data.reason2_title;
+    document.getElementById('raison2_texte').value = data.reason2_text;
+    document.getElementById('raison3_titre').value = data.reason3_title;
+    document.getElementById('raison3_texte').value = data.reason3_text;
+}
+
+// --- ÉVÉNEMENTS ---
+
+// Attache l'événement de mise à jour au changement du sélecteur
+document.getElementById('offer-select').addEventListener('change', updateFormDefaults);
+
+// Logique de soumission du formulaire
 document.getElementById('proposal-form').addEventListener('submit', async function(event) {
     event.preventDefault();
 
@@ -5,7 +64,9 @@ document.getElementById('proposal-form').addEventListener('submit', async functi
     generateBtn.textContent = 'Génération en cours...';
     generateBtn.disabled = true;
 
-    // MODIFICATION ICI : On définit les deux variables liées au genre en même temps
+    const selectedOfferKey = document.getElementById('offer-select').value;
+    const currentOfferData = offerData[selectedOfferKey];
+    
     const genre = document.querySelector('input[name="genre"]:checked').value;
     const salutation = (genre === 'femme') ? 'Chère' : 'Cher';
     const pret_adjectif = (genre === 'femme') ? 'Prête' : 'Prêt';
@@ -14,86 +75,76 @@ document.getElementById('proposal-form').addEventListener('submit', async functi
         nomSocieteClient: document.getElementById('nomSocieteClient').value,
         prenomClient: document.getElementById('prenomClient').value,
         salutation: salutation,
-        pret_adjectif: pret_adjectif, // Ajout de la nouvelle variable
+        pret_adjectif: pret_adjectif,
         dateEnvoi: new Date(document.getElementById('dateEnvoi').value).toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' }),
         objectifPrincipal: document.getElementById('objectifPrincipal').value,
-        
         raison1_titre: document.getElementById('raison1_titre').value,
         raison1_texte: document.getElementById('raison1_texte').value,
         raison2_titre: document.getElementById('raison2_titre').value,
         raison2_texte: document.getElementById('raison2_texte').value,
         raison3_titre: document.getElementById('raison3_titre').value,
         raison3_texte: document.getElementById('raison3_texte').value,
-
         situationActuelle: document.getElementById('situationActuelle').value,
         defisConcrets: document.getElementById('defisConcrets').value,
         objectifsCommuns: document.getElementById('objectifsCommuns').value,
+        // Ajout des variables spécifiques à l'offre
+        nomOffre: currentOfferData.name,
+        prixTotal: currentOfferData.price,
+        prixAcompte: currentOfferData.deposit,
     };
 
     const formatList = (text, type) => {
-        return text
-            .split('\n')
-            .filter(line => line.trim() !== '')
-            .map(line => {
-                if (type === 'defis') {
-                    return `<li class="flex items-start"><span class="text-warm-orange mt-1 mr-3">&#10007;</span>${line.trim()}</li>`;
-                }
-                if (type === 'objectifs') {
-                    return `<li class="flex items-start"><span class="text-success-green mt-1 mr-3">&#10003;</span><strong>${line.trim()}</strong></li>`;
-                }
-                return '';
-            })
-            .join('\n');
+        return text.split('\n').filter(line => line.trim() !== '').map(line => {
+            if (type === 'defis') return `<li class="flex items-start"><span class="text-warm-orange mt-1 mr-3">&#10007;</span>${line.trim()}</li>`;
+            if (type === 'objectifs') return `<li class="flex items-start"><span class="text-success-green mt-1 mr-3">&#10003;</span><strong>${line.trim()}</strong></li>`;
+            return '';
+        }).join('\n');
     };
 
     values.defisConcrets = formatList(values.defisConcrets, 'defis');
     values.objectifsCommuns = formatList(values.objectifsCommuns, 'objectifs');
 
     const zip = new JSZip();
-    
-    const templateFiles = [
-        'page1-propco-essentiel.html', 'page2-propco-essentiel.html', 'page3-propco-essentiel.html',
-        'page4-propco-essentiel.html', 'page5-propco-essentiel.html', 'page6-propco-essentiel.html',
-        'page7-propco-essentiel.html', 'page8-propco-essentiel.html', 'page9-propco-essentiel.html'
-    ];
+    const templateFiles = Array.from({ length: 9 }, (_, i) => `page${i + 1}.html`);
 
     for (const fileName of templateFiles) {
         try {
-            const response = await fetch(`templates/${fileName}`);
-            if (!response.ok) throw new Error(`Fichier modèle introuvable: ${fileName}`);
+            const response = await fetch(`templates/${selectedOfferKey}/${fileName}`);
+            if (!response.ok) throw new Error(`Fichier modèle introuvable: templates/${selectedOfferKey}/${fileName}`);
             
             let content = await response.text();
-
             for (const key in values) {
                 const regex = new RegExp(`{{${key}}}`, 'g');
                 content = content.replace(regex, values[key]);
             }
-
             zip.file(fileName, content);
-
         } catch (error) {
             console.error(error);
-            alert(`Une erreur est survenue lors du traitement du fichier ${fileName}. Vérifiez la console.`);
+            alert(`Une erreur est survenue: ${error.message}. Vérifiez la console.`);
             generateBtn.textContent = 'Générer la Proposition (.zip)';
             generateBtn.disabled = false;
             return;
         }
     }
 
-    zip.generateAsync({ type: 'blob' })
-        .then(function(content) {
-            const link = document.createElement('a');
-            const safeClientName = values.nomSocieteClient.replace(/[^a-z0-9]/gi, '_').toLowerCase();
-            link.download = `Proposition_Essentiel_${safeClientName}.zip`;
-            link.href = URL.createObjectURL(content);
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
-            URL.revokeObjectURL(link.href);
-            
-            generateBtn.textContent = 'Générer la Proposition (.zip)';
-            generateBtn.disabled = false;
-        });
+    zip.generateAsync({ type: 'blob' }).then(function(content) {
+        const link = document.createElement('a');
+        const safeClientName = values.nomSocieteClient.replace(/[^a-z0-9]/gi, '_').toLowerCase();
+        const safeOfferName = selectedOfferKey.charAt(0).toUpperCase() + selectedOfferKey.slice(1);
+        link.download = `Proposition_${safeOfferName}_${safeClientName}.zip`;
+        link.href = URL.createObjectURL(content);
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        URL.revokeObjectURL(link.href);
+        
+        generateBtn.textContent = 'Générer la Proposition (.zip)';
+        generateBtn.disabled = false;
+    });
 });
 
-document.getElementById('dateEnvoi').valueAsDate = new Date();
+// Initialisation au chargement de la page
+document.addEventListener('DOMContentLoaded', () => {
+    document.getElementById('dateEnvoi').valueAsDate = new Date();
+    updateFormDefaults(); // Charge les valeurs par défaut de la première offre
+});
