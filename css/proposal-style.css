@@ -82,7 +82,7 @@ strong, .font-bold { font-weight: 700; }
 
 .timeline {
     position: relative;
-    padding-left: 2rem; /* Espace pour les cercles */
+    /* padding-left: 2rem;  <-- MODIFICATION : On supprime cette ligne */
 }
 .timeline-line {
     position: absolute;
@@ -95,10 +95,11 @@ strong, .font-bold { font-weight: 700; }
 .timeline-item {
     position: relative;
     margin-bottom: 2rem;
+    padding-left: 3rem; /* <-- MODIFICATION : On ajoute du padding pour repousser le texte */
 }
 .timeline-dot {
     position: absolute;
-    left: 0;
+    left: 0.75rem; /* <-- MODIFICATION : On positionne le point sur la ligne */
     top: 4px;
     width: 1.5rem;
     height: 1.5rem;
