@@ -6,7 +6,10 @@ const offerData = {
         deposit: "399,50 €",
         objective: "moderniser votre image professionnelle pour qu'elle soit enfin à la hauteur de la qualité de vos services.",
         situation: `Lors de notre échange, vous avez mentionné que votre présence en ligne actuelle ne reflète plus la qualité de votre travail. Vous m'avez confié que vous n'osiez "presque plus partager le lien de votre site".`,
+        // MODIFICATION ICI : Ajout des phrases d'intro
+        intro_defis: "Cette situation engendre plusieurs frustrations et freins pour votre activité :",
         challenges: `Un manque de crédibilité perçu qui vous oblige à "sur-justifier" votre valeur.\nL'absence d'un message clair qui perd les visiteurs et ne convertit pas leur intérêt.\nLa complexité et l'inquiétude liées aux obligations légales comme le RGPD.`,
+        intro_objectifs: "Notre collaboration visera donc à transformer ces défis en opportunités :",
         goals: `Moderniser votre image professionnelle pour inspirer une confiance immédiate.\nClarifier votre proposition de valeur pour que vos clients idéaux vous comprennent.\nVous offrir une tranquillité d'esprit totale, tant sur le plan technique que légal.`,
         reason1_title: "Réponse Directe",
         reason1_text: "Elle répond directement à votre défi principal en vous dotant d'une vitrine professionnelle sur-mesure qui reflète enfin la qualité de votre travail.",
@@ -21,7 +24,10 @@ const offerData = {
         deposit: "499,50 €",
         objective: "automatiser votre prise de rendez-vous pour vous libérer un temps administratif précieux.",
         situation: `Lors de notre échange, vous avez souligné que votre processus actuel de prise de rendez-vous est entièrement manuel. Vous m'avez expliqué que les échanges d'emails pour trouver un créneau sont "chronophages et inefficaces".`,
+        // MODIFICATION ICI : Ajout des phrases d'intro
+        intro_defis: "Ce fonctionnement manuel a des conséquences directes sur votre productivité :",
         challenges: `Une perte de temps et de charge mentale considérable que vous pourriez dédier à vos clients.\nUn risque de perdre des prospects impatients qui abandonnent face à la complexité du processus.\nUne expérience client qui manque de fluidité et de professionnalisme dès le premier contact.`,
+        intro_objectifs: "Notre collaboration visera donc à transformer votre site en un véritable outil de productivité :",
         goals: `Automatiser 100% de votre prise de rendez-vous pour libérer votre temps et votre esprit.\nOffrir une expérience de réservation fluide et professionnelle qui convertit.\nConstruire votre "assistant digital personnel" qui travaille pour vous 24/7.`,
         reason1_title: "Ciblage Précis",
         reason1_text: "Elle est spécifiquement conçue pour résoudre votre défi n°1 : l'automatisation. Nous ne faisons pas qu'ajouter un bouton, nous construisons un système de conversion.",
@@ -33,15 +39,16 @@ const offerData = {
 };
 
 // --- FONCTIONS ---
-
-// Met à jour les champs du formulaire avec les données de l'offre sélectionnée
 function updateFormDefaults() {
     const selectedOfferKey = document.getElementById('offer-select').value;
     const data = offerData[selectedOfferKey];
 
     document.getElementById('objectifPrincipal').value = data.objective;
     document.getElementById('situationActuelle').value = data.situation;
+    // MODIFICATION ICI : Pré-remplissage des nouveaux champs
+    document.getElementById('introDefis').value = data.intro_defis;
     document.getElementById('defisConcrets').value = data.challenges;
+    document.getElementById('introObjectifs').value = data.intro_objectifs;
     document.getElementById('objectifsCommuns').value = data.goals;
     document.getElementById('raison1_titre').value = data.reason1_title;
     document.getElementById('raison1_texte').value = data.reason1_text;
@@ -52,11 +59,8 @@ function updateFormDefaults() {
 }
 
 // --- ÉVÉNEMENTS ---
-
-// Attache l'événement de mise à jour au changement du sélecteur
 document.getElementById('offer-select').addEventListener('change', updateFormDefaults);
 
-// Logique de soumission du formulaire
 document.getElementById('proposal-form').addEventListener('submit', async function(event) {
     event.preventDefault();
 
@@ -85,9 +89,11 @@ document.getElementById('proposal-form').addEventListener('submit', async functi
         raison3_titre: document.getElementById('raison3_titre').value,
         raison3_texte: document.getElementById('raison3_texte').value,
         situationActuelle: document.getElementById('situationActuelle').value,
+        // MODIFICATION ICI : Lecture des nouveaux champs
+        introDefis: document.getElementById('introDefis').value,
         defisConcrets: document.getElementById('defisConcrets').value,
+        introObjectifs: document.getElementById('introObjectifs').value,
         objectifsCommuns: document.getElementById('objectifsCommuns').value,
-        // Ajout des variables spécifiques à l'offre
         nomOffre: currentOfferData.name,
         prixTotal: currentOfferData.price,
         prixAcompte: currentOfferData.deposit,
@@ -143,8 +149,7 @@ document.getElementById('proposal-form').addEventListener('submit', async functi
     });
 });
 
-// Initialisation au chargement de la page
 document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('dateEnvoi').valueAsDate = new Date();
-    updateFormDefaults(); // Charge les valeurs par défaut de la première offre
+    updateFormDefaults();
 });
