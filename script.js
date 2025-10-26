@@ -6,7 +6,6 @@ const offerData = {
         deposit: "399,50 €",
         objective: "moderniser votre image professionnelle pour qu'elle soit enfin à la hauteur de la qualité de vos services.",
         situation: `Lors de notre échange, vous avez mentionné que votre présence en ligne actuelle ne reflète plus la qualité de votre travail. Vous m'avez confié que vous n'osiez "presque plus partager le lien de votre site".`,
-        // MODIFICATION ICI : Ajout des phrases d'intro
         intro_defis: "Cette situation engendre plusieurs frustrations et freins pour votre activité :",
         challenges: `Un manque de crédibilité perçu qui vous oblige à "sur-justifier" votre valeur.\nL'absence d'un message clair qui perd les visiteurs et ne convertit pas leur intérêt.\nLa complexité et l'inquiétude liées aux obligations légales comme le RGPD.`,
         intro_objectifs: "Notre collaboration visera donc à transformer ces défis en opportunités :",
@@ -24,7 +23,6 @@ const offerData = {
         deposit: "499,50 €",
         objective: "automatiser votre prise de rendez-vous pour vous libérer un temps administratif précieux.",
         situation: `Lors de notre échange, vous avez souligné que votre processus actuel de prise de rendez-vous est entièrement manuel. Vous m'avez expliqué que les échanges d'emails pour trouver un créneau sont "chronophages et inefficaces".`,
-        // MODIFICATION ICI : Ajout des phrases d'intro
         intro_defis: "Ce fonctionnement manuel a des conséquences directes sur votre productivité :",
         challenges: `Une perte de temps et de charge mentale considérable que vous pourriez dédier à vos clients.\nUn risque de perdre des prospects impatients qui abandonnent face à la complexité du processus.\nUne expérience client qui manque de fluidité et de professionnalisme dès le premier contact.`,
         intro_objectifs: "Notre collaboration visera donc à transformer votre site en un véritable outil de productivité :",
@@ -35,6 +33,24 @@ const offerData = {
         reason2_text: "Dès le jour de la mise en ligne, votre \"assistant digital\" commencera à vous faire gagner des heures, en gérant vos prises de rendez-vous 24/7.",
         reason3_title: "Meilleur Retour sur Investissement",
         reason3_text: "Le temps que vous allez économiser et les prospects que vous n'allez plus perdre font de cette formule l'investissement le plus rentable pour votre productivité."
+    },
+    // MODIFICATION ICI : Ajout de l'objet pour l'offre Croissance
+    croissance: {
+        name: "Site Clarté Croissance",
+        price: "1299,00 €",
+        deposit: "649,50 €",
+        objective: "transformer votre site en un véritable moteur d'acquisition de clients sur le long terme.",
+        situation: `Lors de notre échange, vous avez exprimé votre désir d'aller au-delà d'une simple "carte de visite" en ligne. Vous sentez que votre site actuel est passif et ne contribue pas activement à la croissance de votre activité.`,
+        intro_defis: "Cette passivité se traduit par plusieurs opportunités de croissance manquées :",
+        challenges: `Vous ne capturez pas l'intérêt des visiteurs qui ne sont pas encore prêts à acheter, perdant ainsi de futurs clients potentiels.\nVotre expertise et vos actualités ne sont pas mises en avant, ce qui ne vous positionne pas comme une autorité dans votre domaine.\nVous n'avez aucune donnée sur le comportement de vos visiteurs, naviguant "à l'aveugle" sans stratégie claire.`,
+        intro_objectifs: "Notre collaboration visera donc à construire un véritable écosystème marketing :",
+        goals: `Transformer votre site en une machine à générer des prospects en capturant l'email de vos visiteurs.\nAsseoir votre statut d'expert en partageant régulièrement votre savoir-faire.\nMettre en place les outils de mesure pour piloter votre croissance sur la base de données concrètes.`,
+        reason1_title: "Vision Proactive",
+        reason1_text: "Elle ne se contente pas d'être une vitrine passive. Elle intègre les outils pour aller activement chercher et fidéliser vos futurs clients.",
+        reason2_title: "Actif à Long Terme",
+        reason2_text: "En vous permettant de créer du contenu (blog) et de bâtir une audience (newsletter), vous investissez dans un actif marketing qui prendra de la valeur avec le temps.",
+        reason3_title: "Pilotage par la Donnée",
+        reason3_text: "Grâce aux outils d'analyse intégrés, vous ne naviguerez plus à l'aveugle. Vous pourrez prendre des décisions marketing basées sur des données réelles."
     }
 };
 
@@ -45,7 +61,6 @@ function updateFormDefaults() {
 
     document.getElementById('objectifPrincipal').value = data.objective;
     document.getElementById('situationActuelle').value = data.situation;
-    // MODIFICATION ICI : Pré-remplissage des nouveaux champs
     document.getElementById('introDefis').value = data.intro_defis;
     document.getElementById('defisConcrets').value = data.challenges;
     document.getElementById('introObjectifs').value = data.intro_objectifs;
@@ -89,7 +104,6 @@ document.getElementById('proposal-form').addEventListener('submit', async functi
         raison3_titre: document.getElementById('raison3_titre').value,
         raison3_texte: document.getElementById('raison3_texte').value,
         situationActuelle: document.getElementById('situationActuelle').value,
-        // MODIFICATION ICI : Lecture des nouveaux champs
         introDefis: document.getElementById('introDefis').value,
         defisConcrets: document.getElementById('defisConcrets').value,
         introObjectifs: document.getElementById('introObjectifs').value,
