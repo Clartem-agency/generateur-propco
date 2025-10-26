@@ -74,7 +74,6 @@
             <fieldset class="border border-gray-200 p-6 rounded-lg">
                 <legend class="text-lg font-bold text-blue-800 px-2">Page 2 : Introduction & Objectif Principal</legend>
                 <div class="mt-5">
-                    <!-- MODIFICATION ICI : Ajout de l'id="intro-page2-text" et suppression du texte statique -->
                     <p id="intro-page2-text" class="text-gray-600 mb-4 bg-gray-50 p-3 rounded-md border border-gray-200"></p>
                     <div>
                         <label for="objectifPrincipal" class="block text-sm font-semibold text-gray-700 mb-2">Objectif principal du client (phrase d'accroche)</label>
@@ -92,12 +91,20 @@
                         <textarea id="situationActuelle" rows="3" class="w-full bg-gray-50 border-gray-300 rounded-md shadow-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500" required></textarea>
                     </div>
                     <div>
+                        <label for="titreDefis" class="block text-sm font-semibold text-gray-700 mb-2">Titre de la section "Défis"</label>
+                        <input type="text" id="titreDefis" class="w-full bg-gray-50 border-gray-300 rounded-md shadow-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500" required>
+                    </div>
+                    <div>
                         <label for="introDefis" class="block text-sm font-semibold text-gray-700 mb-2">Phrase d'introduction pour les Défis</label>
                         <textarea id="introDefis" rows="2" class="w-full bg-gray-50 border-gray-300 rounded-md shadow-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500" required></textarea>
                     </div>
                     <div>
                         <label for="defisConcrets" class="block text-sm font-semibold text-gray-700 mb-2">Défis Concrets (un par ligne)</label>
                         <textarea id="defisConcrets" rows="4" class="w-full bg-gray-50 border-gray-300 rounded-md shadow-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500" required></textarea>
+                    </div>
+                    <div>
+                        <label for="titreObjectifs" class="block text-sm font-semibold text-gray-700 mb-2">Titre de la section "Objectifs"</label>
+                        <input type="text" id="titreObjectifs" class="w-full bg-gray-50 border-gray-300 rounded-md shadow-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500" required>
                     </div>
                     <div>
                         <label for="introObjectifs" class="block text-sm font-semibold text-gray-700 mb-2">Phrase d'introduction pour les Objectifs</label>
