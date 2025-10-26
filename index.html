@@ -5,39 +5,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Générateur de Proposition Commerciale</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         body { font-family: 'Inter', sans-serif; }
-        /* Ajout d'un style pour le focus des inputs pour une meilleure accessibilité et un look plus pro */
+        /* Style personnalisé pour améliorer le focus sur les champs */
         .form-input {
-            @apply block w-full rounded-md border-slate-300 bg-white shadow-sm placeholder:text-slate-400 focus:border-blue-500 focus:ring-1 focus:ring-blue-500;
+            @apply block w-full rounded-md border-slate-300 bg-slate-50 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm text-slate-800;
         }
     </style>
 </head>
-<!-- MODIFICATION : Utilisation d'une couleur de fond plus douce (slate) -->
-<body class="bg-slate-50 text-slate-800">
+<!-- MODIFIÉ : Fond légèrement plus froid pour un meilleur contraste -->
+<body class="bg-slate-100 text-slate-800">
 
-    <!-- MODIFICATION : Augmentation du padding vertical global (py-12) -->
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-12 max-w-4xl">
+    <!-- MODIFIÉ : Augmentation de la taille max et du padding pour plus d'espace -->
+    <div class="container mx-auto p-4 md:p-10 max-w-5xl">
         <header class="text-center mb-12">
-            <!-- MODIFICATION : Couleurs et espacement ajustés pour un meilleur impact -->
-            <h1 class="text-4xl font-bold text-slate-900">Générateur de Proposition</h1>
+            <!-- MODIFIÉ : Titre plus impactant avec un dégradé -->
+            <h1 class="text-4xl md:text-5xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
+                Générateur de Proposition
+            </h1>
             <p class="text-slate-500 mt-3 text-lg">Choisissez une offre et remplissez les champs pour générer une proposition personnalisée.</p>
         </header>
 
-        <!-- MODIFICATION : Ajout d'un espacement plus grand entre les sections (space-y-10) -->
-        <form id="proposal-form" class="bg-white p-6 sm:p-8 rounded-xl shadow-lg space-y-10">
+        <!-- MODIFIÉ : L'espacement est maintenant géré par les fieldsets pour un meilleur contrôle -->
+        <form id="proposal-form" class="space-y-10">
 
             <!-- Section Choix de l'Offre -->
-            <!-- MODIFICATION : Le fieldset est maintenant une "carte" visuelle avec un fond et une ombre -->
-            <fieldset class="bg-slate-50 p-6 rounded-xl shadow-sm">
-                <!-- MODIFICATION : La légende est stylisée comme un titre de section proéminent -->
-                <legend class=" -mt-10 mb-6 w-auto bg-blue-800 text-white font-bold text-lg px-4 py-2 rounded-md shadow-md">
+            <!-- MODIFIÉ : Nouveau style pour les sections "fieldset" -->
+            <fieldset class="bg-white p-6 rounded-lg shadow-sm border border-slate-200">
+                <!-- MODIFIÉ : Nouveau style pour les titres de section "legend" -->
+                <legend class="inline-block px-4 py-1 text-base font-semibold text-blue-700 bg-blue-100 rounded-md -mt-10">
                     1. Choix de l'Offre
                 </legend>
                 <div class="mt-4">
-                    <label for="offer-select" class="block text-sm font-medium text-slate-700 mb-2">Sélectionnez la formule à générer :</label>
-                    <!-- MODIFICATION : Application de la classe .form-input pour un style unifié -->
+                    <label for="offer-select" class="block text-sm font-medium text-slate-600 mb-2">Sélectionnez la formule à générer :</label>
+                    <!-- MODIFIÉ : Application de la classe .form-input -->
                     <select id="offer-select" class="form-input">
                         <option value="essentiel">Site Clarté Essentiel</option>
                         <option value="interaction">Site Clarté Interaction</option>
@@ -48,140 +50,133 @@
             </fieldset>
 
             <!-- Section Client -->
-            <fieldset class="bg-slate-50 p-6 rounded-xl shadow-sm">
-                <legend class="-mt-10 mb-6 w-auto bg-blue-800 text-white font-bold text-lg px-4 py-2 rounded-md shadow-md">
+            <fieldset class="bg-white p-6 rounded-lg shadow-sm border border-slate-200">
+                <legend class="inline-block px-4 py-1 text-base font-semibold text-blue-700 bg-blue-100 rounded-md -mt-10">
                     2. Informations Client
                 </legend>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
                     <div>
-                        <label for="nomSocieteClient" class="block text-sm font-medium text-slate-700 mb-2">Nom de la société du client</label>
+                        <label for="nomSocieteClient" class="block text-sm font-medium text-slate-600 mb-2">Nom de la société du client</label>
                         <input type="text" id="nomSocieteClient" class="form-input" required placeholder="Ex: Acme Corp">
                     </div>
                     <div>
-                        <label for="prenomClient" class="block text-sm font-medium text-slate-700 mb-2">Prénom du contact</label>
+                        <label for="prenomClient" class="block text-sm font-medium text-slate-600 mb-2">Prénom du contact</label>
                         <input type="text" id="prenomClient" class="form-input" required placeholder="Ex: Jean">
                     </div>
                 </div>
                 <div class="mt-6">
-                    <label class="block text-sm font-medium text-slate-700 mb-2">Genre du contact</label>
+                    <label class="block text-sm font-medium text-slate-600 mb-2">Genre du contact</label>
                     <div class="flex items-center space-x-6">
                         <div class="flex items-center">
                             <input type="radio" id="genreHomme" name="genre" value="homme" class="h-4 w-4 text-blue-600 border-slate-300 focus:ring-blue-500" checked>
-                            <label for="genreHomme" class="ml-2 block text-sm text-slate-800">Homme</label>
+                            <label for="genreHomme" class="ml-2 block text-sm text-slate-700">Homme</label>
                         </div>
                         <div class="flex items-center">
                             <input type="radio" id="genreFemme" name="genre" value="femme" class="h-4 w-4 text-blue-600 border-slate-300 focus:ring-blue-500">
-                            <label for="genreFemme" class="ml-2 block text-sm text-slate-800">Femme</label>
+                            <label for="genreFemme" class="ml-2 block text-sm text-slate-700">Femme</label>
                         </div>
                     </div>
                 </div>
             </fieldset>
 
             <!-- Section Proposition -->
-            <fieldset class="bg-slate-50 p-6 rounded-xl shadow-sm">
-                <legend class="-mt-10 mb-6 w-auto bg-blue-800 text-white font-bold text-lg px-4 py-2 rounded-md shadow-md">
+            <fieldset class="bg-white p-6 rounded-lg shadow-sm border border-slate-200">
+                <legend class="inline-block px-4 py-1 text-base font-semibold text-blue-700 bg-blue-100 rounded-md -mt-10">
                     3. Détails de la Proposition
                 </legend>
                 <div class="space-y-6 mt-4">
                     <div>
-                        <label for="dateEnvoi" class="block text-sm font-medium text-slate-700 mb-2">Date d'envoi</label>
+                        <label for="dateEnvoi" class="block text-sm font-medium text-slate-600 mb-2">Date d'envoi</label>
                         <input type="date" id="dateEnvoi" class="form-input md:w-1/2" required>
                     </div>
                     <div>
-                        <label for="objectifPrincipal" class="block text-sm font-medium text-slate-700 mb-2">Objectif principal du client (phrase d'accroche)</label>
+                        <label for="objectifPrincipal" class="block text-sm font-medium text-slate-600 mb-2">Objectif principal du client (phrase d'accroche)</label>
                         <textarea id="objectifPrincipal" rows="2" class="form-input" required></textarea>
                     </div>
                 </div>
             </fieldset>
             
             <!-- Section Diagnostic (Page 3) -->
-            <fieldset class="bg-slate-50 p-6 rounded-xl shadow-sm">
-                <legend class="-mt-10 mb-6 w-auto bg-blue-800 text-white font-bold text-lg px-4 py-2 rounded-md shadow-md">
-                    4. Personnalisation du Diagnostic
+            <fieldset class="bg-white p-6 rounded-lg shadow-sm border border-slate-200">
+                <legend class="inline-block px-4 py-1 text-base font-semibold text-blue-700 bg-blue-100 rounded-md -mt-10">
+                   4. Personnalisation du Diagnostic
                 </legend>
                 <div class="space-y-6 mt-4">
                     <div>
-                        <label for="situationActuelle" class="block text-sm font-medium text-slate-700 mb-2">Situation Actuelle (paragraphe)</label>
+                        <label for="situationActuelle" class="block text-sm font-medium text-slate-600 mb-2">Situation Actuelle (paragraphe)</label>
                         <textarea id="situationActuelle" rows="3" class="form-input" required></textarea>
                     </div>
                     <div>
-                        <label for="introDefis" class="block text-sm font-medium text-slate-700 mb-2">Phrase d'introduction pour les Défis</label>
+                        <label for="introDefis" class="block text-sm font-medium text-slate-600 mb-2">Phrase d'introduction pour les Défis</label>
                         <textarea id="introDefis" rows="2" class="form-input" required></textarea>
                     </div>
                     <div>
-                        <label for="defisConcrets" class="block text-sm font-medium text-slate-700 mb-2">Défis Concrets (un par ligne, texte simple)</label>
+                        <label for="defisConcrets" class="block text-sm font-medium text-slate-600 mb-2">Défis Concrets (un par ligne)</label>
                         <textarea id="defisConcrets" rows="4" class="form-input" required></textarea>
                     </div>
                     <div>
-                        <label for="introObjectifs" class="block text-sm font-medium text-slate-700 mb-2">Phrase d'introduction pour les Objectifs</label>
+                        <label for="introObjectifs" class="block text-sm font-medium text-slate-600 mb-2">Phrase d'introduction pour les Objectifs</label>
                         <textarea id="introObjectifs" rows="2" class="form-input" required></textarea>
                     </div>
                     <div>
-                        <label for="objectifsCommuns" class="block text-sm font-medium text-slate-700 mb-2">Objectifs Communs (un par ligne, texte simple)</label>
+                        <label for="objectifsCommuns" class="block text-sm font-medium text-slate-600 mb-2">Objectifs Communs (un par ligne)</label>
                         <textarea id="objectifsCommuns" rows="4" class="form-input" required></textarea>
                     </div>
                 </div>
             </fieldset>
 
             <!-- Section Recommandation (Page 4) -->
-            <fieldset class="bg-slate-50 p-6 rounded-xl shadow-sm">
-                <legend class="-mt-10 mb-6 w-auto bg-blue-800 text-white font-bold text-lg px-4 py-2 rounded-md shadow-md">
-                    5. Personnalisation Recommandation
+            <fieldset class="bg-white p-6 rounded-lg shadow-sm border border-slate-200">
+                <legend class="inline-block px-4 py-1 text-base font-semibold text-blue-700 bg-blue-100 rounded-md -mt-10">
+                    5. Personnalisation de la Recommandation
                 </legend>
-                <div class="space-y-6 mt-4">
+                <div class="space-y-8 mt-4">
                     <!-- Raison 1 -->
-                    <div class="border border-slate-200 p-4 rounded-lg">
-                        <p class="font-semibold text-slate-800 mb-4">Raison 1</p>
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                            <div>
-                                <label for="raison1_titre" class="block text-sm font-medium text-slate-700 mb-2">Titre</label>
-                                <input type="text" id="raison1_titre" class="form-input">
-                            </div>
-                            <div class="md:row-span-2">
-                                <label for="raison1_texte" class="block text-sm font-medium text-slate-700 mb-2">Texte</label>
-                                <textarea id="raison1_texte" rows="3" class="form-input h-full"></textarea>
-                            </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-4 p-4 bg-slate-50 rounded-md border">
+                         <div class="md:col-span-2 font-medium text-slate-500 border-b pb-2 mb-2">Raison 1</div>
+                        <div>
+                            <label for="raison1_titre" class="block text-sm font-medium text-slate-600 mb-2">Titre</label>
+                            <input type="text" id="raison1_titre" class="form-input">
+                        </div>
+                        <div>
+                            <label for="raison1_texte" class="block text-sm font-medium text-slate-600 mb-2">Texte</label>
+                            <textarea id="raison1_texte" rows="3" class="form-input"></textarea>
                         </div>
                     </div>
-                    <!-- Raison 2 -->
-                    <div class="border border-slate-200 p-4 rounded-lg">
-                        <p class="font-semibold text-slate-800 mb-4">Raison 2</p>
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                            <div>
-                                <label for="raison2_titre" class="block text-sm font-medium text-slate-700 mb-2">Titre</label>
-                                <input type="text" id="raison2_titre" class="form-input">
-                            </div>
-                            <div class="md:row-span-2">
-                                <label for="raison2_texte" class="block text-sm font-medium text-slate-700 mb-2">Texte</label>
-                                <textarea id="raison2_texte" rows="3" class="form-input h-full"></textarea>
-                            </div>
+                     <!-- Raison 2 -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-4 p-4 bg-slate-50 rounded-md border">
+                         <div class="md:col-span-2 font-medium text-slate-500 border-b pb-2 mb-2">Raison 2</div>
+                        <div>
+                            <label for="raison2_titre" class="block text-sm font-medium text-slate-600 mb-2">Titre</label>
+                            <input type="text" id="raison2_titre" class="form-input">
+                        </div>
+                        <div>
+                            <label for="raison2_texte" class="block text-sm font-medium text-slate-600 mb-2">Texte</label>
+                            <textarea id="raison2_texte" rows="3" class="form-input"></textarea>
                         </div>
                     </div>
-                    <!-- Raison 3 -->
-                    <div class="border border-slate-200 p-4 rounded-lg">
-                        <p class="font-semibold text-slate-800 mb-4">Raison 3</p>
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                            <div>
-                                <label for="raison3_titre" class="block text-sm font-medium text-slate-700 mb-2">Titre</label>
-                                <input type="text" id="raison3_titre" class="form-input">
-                            </div>
-                            <div class="md:row-span-2">
-                                <label for="raison3_texte" class="block text-sm font-medium text-slate-700 mb-2">Texte</label>
-                                <textarea id="raison3_texte" rows="3" class="form-input h-full"></textarea>
-                            </div>
+                     <!-- Raison 3 -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-4 p-4 bg-slate-50 rounded-md border">
+                         <div class="md:col-span-2 font-medium text-slate-500 border-b pb-2 mb-2">Raison 3</div>
+                        <div>
+                            <label for="raison3_titre" class="block text-sm font-medium text-slate-600 mb-2">Titre</label>
+                            <input type="text" id="raison3_titre" class="form-input">
+                        </div>
+                        <div>
+                            <label for="raison3_texte" class="block text-sm font-medium text-slate-600 mb-2">Texte</label>
+                            <textarea id="raison3_texte" rows="3" class="form-input"></textarea>
                         </div>
                     </div>
                 </div>
             </fieldset>
 
+            <!-- MODIFIÉ : Bouton plus visible et centré, avec une icône -->
             <div class="text-center pt-6">
-                <!-- MODIFICATION : Bouton plus grand, plus visible, avec une icône et des états (hover, focus) améliorés -->
-                <button type="submit" id="generate-btn" class="inline-flex items-center justify-center gap-x-2 bg-blue-700 hover:bg-blue-800 text-white font-bold py-3 px-8 rounded-lg shadow-lg transition-all duration-200 transform hover:scale-105 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600 disabled:bg-slate-400 disabled:scale-100">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
-                        <path d="M10.75 2.75a.75.75 0 0 0-1.5 0v8.614L6.295 8.235a.75.75 0 1 0-1.09 1.03l4.25 4.5a.75.75 0 0 0 1.09 0l4.25-4.5a.75.75 0 0 0-1.09-1.03l-2.955 3.129V2.75Z" />
-                        <path d="M3.5 12.75a.75.75 0 0 0-1.5 0v2.5A2.75 2.75 0 0 0 4.75 18h10.5A2.75 2.75 0 0 0 18 15.25v-2.5a.75.75 0 0 0-1.5 0v2.5c0 .69-.56 1.25-1.25 1.25H4.75c-.69 0-1.25-.56-1.25-1.25v-2.5Z" />
+                <button type="submit" id="generate-btn" class="inline-flex items-center justify-center bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-10 rounded-lg shadow-lg transition-transform transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-blue-300">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-3" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M4 2a2 2 0 00-2 2v12a2 2 0 002 2h12a2 2 0 002-2V4a2 2 0 00-2-2H4zm0 14V4h12v12H4zm2-4a1 1 0 011-1h6a1 1 0 110 2H7a1 1 0 01-1-1zm1-4a1 1 0 100 2h6a1 1 0 100-2H7z" clip-rule="evenodd" />
                     </svg>
-                    <span>Générer la Proposition (.zip)</span>
+                    Générer la Proposition (.zip)
                 </button>
             </div>
         </form>
