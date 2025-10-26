@@ -7,8 +7,10 @@ const offerData = {
         intro_page2: "Suite à notre passionnant Appel Clarté, cette proposition détaille la solution que j'ai conçue pour répondre à votre objectif principal :",
         objective: "moderniser votre image professionnelle pour qu'elle soit enfin à la hauteur de la qualité de vos services.",
         situation: `Lors de notre échange, vous avez mentionné que votre présence en ligne actuelle ne reflète plus la qualité de votre travail. Vous m'avez confié que vous n'osiez "presque plus partager le lien de votre site".`,
+        title_defis: "Les Défis Concrets",
         intro_defis: "Cette situation engendre plusieurs frustrations et freins pour votre activité :",
         challenges: `Un manque de crédibilité perçu qui vous oblige à "sur-justifier" votre valeur.\nL'absence d'un message clair qui perd les visiteurs et ne convertit pas leur intérêt.\nLa complexité et l'inquiétude liées aux obligations légales comme le RGPD.`,
+        title_objectifs: "Nos Objectifs Communs",
         intro_objectifs: "Notre collaboration visera donc à transformer ces défis en opportunités :",
         goals: `Moderniser votre image professionnelle pour inspirer une confiance immédiate.\nClarifier votre proposition de valeur pour que vos clients idéaux vous comprennent.\nVous offrir une tranquillité d'esprit totale, tant sur le plan technique que légal.`,
         reason1_title: "Réponse Directe",
@@ -25,8 +27,10 @@ const offerData = {
         intro_page2: "Suite à notre passionnant Appel Clarté, cette proposition détaille la solution que j'ai conçue pour répondre à votre objectif principal :",
         objective: "automatiser votre prise de rendez-vous pour vous libérer un temps administratif précieux.",
         situation: `Lors de notre échange, vous avez souligné que votre processus actuel de prise de rendez-vous est entièrement manuel. Vous m'avez expliqué que les échanges d'emails pour trouver un créneau sont "chronophages et inefficaces".`,
+        title_defis: "Les Défis Concrets",
         intro_defis: "Ce fonctionnement manuel a des conséquences directes sur votre productivité :",
         challenges: `Une perte de temps et de charge mentale considérable que vous pourriez dédier à vos clients.\nUn risque de perdre des prospects impatients qui abandonnent face à la complexité du processus.\nUne expérience client qui manque de fluidité et de professionnalisme dès le premier contact.`,
+        title_objectifs: "Nos Objectifs Communs",
         intro_objectifs: "Notre collaboration visera donc à transformer votre site en un véritable outil de productivité :",
         goals: `Automatiser 100% de votre prise de rendez-vous pour libérer votre temps et votre esprit.\nOffrir une expérience de réservation fluide et professionnelle qui convertit.\nConstruire votre "assistant digital personnel" qui travaille pour vous 24/7.`,
         reason1_title: "Ciblage Précis",
@@ -43,8 +47,10 @@ const offerData = {
         intro_page2: "Suite à notre passionnant Appel Clarté, cette proposition détaille la stratégie que j'ai conçue pour répondre à votre ambition principale :",
         objective: "transformer votre site en un véritable moteur d'acquisition de clients sur le long terme.",
         situation: `Lors de notre échange, vous avez exprimé votre désir d'aller au-delà d'une simple "carte de visite" en ligne. Vous sentez que votre site actuel est passif et ne contribue pas activement à la croissance de votre activité.`,
+        title_defis: "Les Opportunités Manquées",
         intro_defis: "Cette passivité se traduit par plusieurs opportunités de croissance manquées :",
         challenges: `Vous ne capturez pas l'intérêt des visiteurs qui ne sont pas encore prêts à acheter, perdant ainsi de futurs clients potentiels.\nVotre expertise et vos actualités ne sont pas mises en avant, ce qui ne vous positionne pas comme une autorité dans votre domaine.\nVous n'avez aucune donnée sur le comportement de vos visiteurs, naviguant "à l'aveugle" sans stratégie claire.`,
+        title_objectifs: "Nos Objectifs Stratégiques",
         intro_objectifs: "Notre collaboration visera donc à construire un véritable écosystème marketing :",
         goals: `Transformer votre site en une machine à générer des prospects en capturant l'email de vos visiteurs.\nAsseoir votre statut d'expert en partageant régulièrement votre savoir-faire.\nMettre en place les outils de mesure pour piloter votre croissance sur la base de données concrètes.`,
         reason1_title: "Vision Proactive",
@@ -61,8 +67,10 @@ const offerData = {
         intro_page2: "Suite à notre passionnant Appel Clarté, cette proposition détaille le plan d'action que j'ai conçu pour répondre à votre ambition la plus stratégique :",
         objective: "vous positionner comme la référence incontournable sur Google dans votre ville.",
         situation: `Lors de notre échange, vous avez clairement exprimé votre frustration : malgré la qualité de vos services, vous êtes "invisible sur Google" pour les clients de votre propre ville qui ne vous connaissent pas déjà.`,
+        title_defis: "Le Coût de l'Invisibilité",
         intro_defis: "Cette invisibilité locale représente un manque à gagner significatif :",
         challenges: `Chaque jour, des clients potentiels dans votre zone de chalandise recherchent vos services et trouvent vos concurrents.\nVous dépendez uniquement du bouche-à-oreille, ce qui rend votre croissance imprévisible et limitée.\nVotre crédibilité locale n'est pas établie en ligne, laissant le champ libre à d'autres acteurs.`,
+        title_objectifs: "Notre Mission : La Domination Locale",
         intro_objectifs: "Notre collaboration visera donc à mettre en place une stratégie de domination de votre marché local :",
         goals: `Devenir la référence incontournable pour votre métier dans votre ville sur Google.\nApparaître en tête sur Google et Google Maps lorsque des clients locaux vous cherchent.\nGénérer un flux constant de prospects qualifiés et géographiquement pertinents.`,
         reason1_title: "Approche Hyper-Ciblée",
@@ -84,8 +92,10 @@ function updateFormDefaults() {
 
     document.getElementById('objectifPrincipal').value = data.objective;
     document.getElementById('situationActuelle').value = data.situation;
+    document.getElementById('titreDefis').value = data.title_defis;
     document.getElementById('introDefis').value = data.intro_defis;
     document.getElementById('defisConcrets').value = data.challenges;
+    document.getElementById('titreObjectifs').value = data.title_objectifs;
     document.getElementById('introObjectifs').value = data.intro_objectifs;
     document.getElementById('objectifsCommuns').value = data.goals;
     document.getElementById('raison1_titre').value = data.reason1_title;
@@ -120,7 +130,6 @@ document.getElementById('proposal-form').addEventListener('submit', async functi
         pret_adjectif: pret_adjectif,
         dateEnvoi: new Date(document.getElementById('dateEnvoi').value).toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' }),
         
-        // MODIFICATION 1 : S'assurer que le texte d'intro est bien dans les données à remplacer
         intro_page2: currentOfferData.intro_page2, 
         
         objectifPrincipal: document.getElementById('objectifPrincipal').value,
@@ -131,8 +140,10 @@ document.getElementById('proposal-form').addEventListener('submit', async functi
         raison3_titre: document.getElementById('raison3_titre').value,
         raison3_texte: document.getElementById('raison3_texte').value,
         situationActuelle: document.getElementById('situationActuelle').value,
+        titreDefis: document.getElementById('titreDefis').value,
         introDefis: document.getElementById('introDefis').value,
         defisConcrets: document.getElementById('defisConcrets').value,
+        titreObjectifs: document.getElementById('titreObjectifs').value,
         introObjectifs: document.getElementById('introObjectifs').value,
         objectifsCommuns: document.getElementById('objectifsCommuns').value,
         nomOffre: currentOfferData.name,
@@ -190,7 +201,6 @@ document.getElementById('proposal-form').addEventListener('submit', async functi
     });
 });
 
-// MODIFICATION 2 : S'assurer que le texte s'affiche bien au premier chargement de la page
 document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('dateEnvoi').valueAsDate = new Date();
     updateFormDefaults();
