@@ -4,6 +4,7 @@ const offerData = {
         name: "Site Clarté Essentiel",
         price: "799,00 €",
         deposit: "399,50 €",
+        intro_page2: "Suite à notre passionnant Appel Clarté, cette proposition détaille la solution que j'ai conçue pour répondre à votre objectif principal :",
         objective: "moderniser votre image professionnelle pour qu'elle soit enfin à la hauteur de la qualité de vos services.",
         situation: `Lors de notre échange, vous avez mentionné que votre présence en ligne actuelle ne reflète plus la qualité de votre travail. Vous m'avez confié que vous n'osiez "presque plus partager le lien de votre site".`,
         intro_defis: "Cette situation engendre plusieurs frustrations et freins pour votre activité :",
@@ -21,6 +22,7 @@ const offerData = {
         name: "Site Clarté Interaction",
         price: "999,00 €",
         deposit: "499,50 €",
+        intro_page2: "Suite à notre passionnant Appel Clarté, cette proposition détaille la solution que j'ai conçue pour répondre à votre objectif principal :",
         objective: "automatiser votre prise de rendez-vous pour vous libérer un temps administratif précieux.",
         situation: `Lors de notre échange, vous avez souligné que votre processus actuel de prise de rendez-vous est entièrement manuel. Vous m'avez expliqué que les échanges d'emails pour trouver un créneau sont "chronophages et inefficaces".`,
         intro_defis: "Ce fonctionnement manuel a des conséquences directes sur votre productivité :",
@@ -38,6 +40,7 @@ const offerData = {
         name: "Site Clarté Croissance",
         price: "1299,00 €",
         deposit: "649,50 €",
+        intro_page2: "Suite à notre passionnant Appel Clarté, cette proposition détaille la stratégie que j'ai conçue pour répondre à votre ambition principale :",
         objective: "transformer votre site en un véritable moteur d'acquisition de clients sur le long terme.",
         situation: `Lors de notre échange, vous avez exprimé votre désir d'aller au-delà d'une simple "carte de visite" en ligne. Vous sentez que votre site actuel est passif et ne contribue pas activement à la croissance de votre activité.`,
         intro_defis: "Cette passivité se traduit par plusieurs opportunités de croissance manquées :",
@@ -51,11 +54,11 @@ const offerData = {
         reason3_title: "Pilotage par la Donnée",
         reason3_text: "Grâce aux outils d'analyse intégrés, vous ne naviguerez plus à l'aveugle. Vous pourrez prendre des décisions marketing basées sur des données réelles."
     },
-    // MODIFICATION ICI : Ajout de l'objet pour l'offre SEO Local
     'seo-local': {
         name: "Site Clarté + SEO Local",
         price: "1999,00 €",
         deposit: "999,50 €",
+        intro_page2: "Suite à notre passionnant Appel Clarté, cette proposition détaille le plan d'action que j'ai conçu pour répondre à votre ambition la plus stratégique :",
         objective: "vous positionner comme la référence incontournable sur Google dans votre ville.",
         situation: `Lors de notre échange, vous avez clairement exprimé votre frustration : malgré la qualité de vos services, vous êtes "invisible sur Google" pour les clients de votre propre ville qui ne vous connaissent pas déjà.`,
         intro_defis: "Cette invisibilité locale représente un manque à gagner significatif :",
@@ -75,6 +78,9 @@ const offerData = {
 function updateFormDefaults() {
     const selectedOfferKey = document.getElementById('offer-select').value;
     const data = offerData[selectedOfferKey];
+
+    // Mise à jour du texte d'introduction de la page 2
+    document.getElementById('intro-page2-text').textContent = data.intro_page2;
 
     document.getElementById('objectifPrincipal').value = data.objective;
     document.getElementById('situationActuelle').value = data.situation;
@@ -113,6 +119,10 @@ document.getElementById('proposal-form').addEventListener('submit', async functi
         salutation: salutation,
         pret_adjectif: pret_adjectif,
         dateEnvoi: new Date(document.getElementById('dateEnvoi').value).toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' }),
+        
+        // MODIFICATION 1 : S'assurer que le texte d'intro est bien dans les données à remplacer
+        intro_page2: currentOfferData.intro_page2, 
+        
         objectifPrincipal: document.getElementById('objectifPrincipal').value,
         raison1_titre: document.getElementById('raison1_titre').value,
         raison1_texte: document.getElementById('raison1_texte').value,
@@ -180,6 +190,7 @@ document.getElementById('proposal-form').addEventListener('submit', async functi
     });
 });
 
+// MODIFICATION 2 : S'assurer que le texte s'affiche bien au premier chargement de la page
 document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('dateEnvoi').valueAsDate = new Date();
     updateFormDefaults();
