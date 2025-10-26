@@ -87,9 +87,7 @@ function updateFormDefaults() {
     const selectedOfferKey = document.getElementById('offer-select').value;
     const data = offerData[selectedOfferKey];
 
-    // Mise à jour du texte d'introduction de la page 2
     document.getElementById('intro-page2-text').textContent = data.intro_page2;
-
     document.getElementById('objectifPrincipal').value = data.objective;
     document.getElementById('situationActuelle').value = data.situation;
     document.getElementById('titreDefis').value = data.title_defis;
@@ -130,7 +128,7 @@ document.getElementById('proposal-form').addEventListener('submit', async functi
         pret_adjectif: pret_adjectif,
         dateEnvoi: new Date(document.getElementById('dateEnvoi').value).toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' }),
         
-        intro_page2: currentOfferData.intro_page2, 
+        intro_page2: document.getElementById('intro-page2-text').textContent,
         
         objectifPrincipal: document.getElementById('objectifPrincipal').value,
         raison1_titre: document.getElementById('raison1_titre').value,
@@ -153,8 +151,8 @@ document.getElementById('proposal-form').addEventListener('submit', async functi
 
     const formatList = (text, type) => {
         return text.split('\n').filter(line => line.trim() !== '').map(line => {
-            if (type === 'defis') return `<li class="flex items-start"><span class="text-warm-orange mt-1 mr-3">&#10007;</span>${line.trim()}</li>`;
-            if (type === 'objectifs') return `<li class="flex items-start"><span class="text-success-green mt-1 mr-3">&#10003;</span><strong>${line.trim()}</strong></li>`;
+            if (type === 'defis') return `<li style="display: flex;"><span class="text-warm-orange" style="margin-right: 0.75rem;">&#10007;</span>${line.trim()}</li>`;
+            if (type === 'objectifs') return `<li style="display: flex;"><span class="text-success-green" style="margin-right: 0.75rem;">&#10003;</span><strong>${line.trim()}</strong></li>`;
             return '';
         }).join('\n');
     };
@@ -163,6 +161,28 @@ document.getElementById('proposal-form').addEventListener('submit', async functi
     values.objectifsCommuns = formatList(values.objectifsCommuns, 'objectifs');
 
     const zip = new JSZip();
+
+    // ==================================================================
+    //                  *** DÉBUT DE LA CORRECTION ***
+    // On charge le fichier CSS et on l'ajoute au zip dans un dossier "css"
+    // ==================================================================
+    try {
+        const cssResponse = await fetch('css/proposal-style.css');
+        if (!cssResponse.ok) throw new Error('Fichier css/proposal-style.css introuvable.');
+        const cssContent = await cssResponse.text();
+        zip.folder('css').file('proposal-style.css', cssContent);
+    } catch (error) {
+        console.error(error);
+        alert(`Erreur critique: Impossible de charger le fichier de style. ${error.message}`);
+        generateBtn.textContent = 'Générer la Proposition (.zip)';
+        generateBtn.disabled = false;
+        return;
+    }
+    // ==================================================================
+    //                   *** FIN DE LA CORRECTION ***
+    // ==================================================================
+
+
     const templateFiles = Array.from({ length: 9 }, (_, i) => `page${i + 1}.html`);
 
     for (const fileName of templateFiles) {

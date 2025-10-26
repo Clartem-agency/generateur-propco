@@ -4,102 +4,52 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Diagnostic - Proposition pour {{nomSocieteClient}}</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
-    
-    <style>
-        body { font-family: 'Inter', sans-serif; }
-        .page {
-            width: 21cm;
-            min-height: 29.7cm;
-            padding: 2.5cm;
-            margin: 1rem auto;
-            border: 1px #D1D5DB solid;
-            background: white;
-            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-        }
-        @media print {
-            body, .page {
-                margin: 0;
-                box-shadow: none;
-                border: none;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="css/proposal-style.css">
 </head>
-<body class="bg-gray-100">
+<body>
 
-    <div class="page flex flex-col">
+    <div class="page">
         
-        <header class="flex justify-between items-center pb-4 border-b border-gray-200">
-            <h2 class="text-2xl font-bold text-deep-blue">Notre Diagnostic</h2>
+        <header class="page-header">
+            <h2 class="text-deep-blue">Notre Diagnostic</h2>
             <p class="text-sm text-neutral-light">clartem.com</p>
         </header>
 
-        <main class="mt-12 text-lg text-neutral-dark flex-grow">
-            
-            <h3 class="text-3xl font-bold text-neutral-dark mb-10">
-                Vos Défis et Vos Ambitions
-            </h3>
+        <main style="margin-top: 2rem; flex-grow: 1;">
+            <h3 class="text-neutral-dark" style="margin-bottom: 2.5rem;">Vos Défis et Vos Ambitions</h3>
 
-            <div class="space-y-10">
-
-                <!-- Bloc 1: La Situation Actuelle -->
+            <div style="display: flex; flex-direction: column; gap: 2rem;">
+                <!-- Situation Actuelle -->
                 <div>
-                    <div class="flex items-center">
-                        <span class="flex-shrink-0 w-12 h-12 bg-soft-blue text-clarity-blue rounded-full flex items-center justify-center">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
-                            </svg>
-                        </span>
-                        <h4 class="ml-4 text-xl font-bold text-neutral-dark">La Situation Actuelle</h4>
-                    </div>
-                    <div class="mt-4 pl-16 border-l-2 border-gray-200 ml-6">
-                        <p class="text-neutral-light leading-relaxed">{{situationActuelle}}</p>
+                    <h4 class="text-neutral-dark">La Situation Actuelle</h4>
+                    <div style="margin-top: 0.5rem; padding-left: 1rem; border-left: 2px solid var(--gray-200);">
+                        <p>{{situationActuelle}}</p>
                     </div>
                 </div>
 
-                <!-- Bloc 2: Les Défis -->
+                <!-- Défis -->
                 <div>
-                    <div class="flex items-center">
-                        <span class="flex-shrink-0 w-12 h-12 bg-soft-blue text-clarity-blue rounded-full flex items-center justify-center">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
-                            </svg>
-                        </span>
-                        <h4 class="ml-4 text-xl font-bold text-neutral-dark">{{titreDefis}}</h4>
-                    </div>
-                    <div class="mt-4 pl-16 border-l-2 border-gray-200 ml-6">
-                        <p class="text-neutral-light leading-relaxed mb-4">{{introDefis}}</p>
-                        <ul class="space-y-3">{{defisConcrets}}</ul>
+                    <h4 class="text-neutral-dark">{{titreDefis}}</h4>
+                    <div style="margin-top: 0.5rem; padding-left: 1rem; border-left: 2px solid var(--gray-200);">
+                        <p class="text-neutral-light" style="margin-bottom: 0.75rem;">{{introDefis}}</p>
+                        <ul style="list-style-type: none; padding-left: 0; display: flex; flex-direction: column; gap: 0.5rem;">{{defisConcrets}}</ul>
                     </div>
                 </div>
 
-                <!-- Bloc 3: Les Objectifs Clés -->
+                <!-- Objectifs -->
                 <div>
-                    <div class="flex items-center">
-                        <span class="flex-shrink-0 w-12 h-12 bg-soft-blue text-clarity-blue rounded-full flex items-center justify-center">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                            </svg>
-                        </span>
-                        <h4 class="ml-4 text-xl font-bold text-neutral-dark">{{titreObjectifs}}</h4>
-                    </div>
-                    <div class="mt-4 pl-16 border-l-2 border-gray-200 ml-6">
-                         <p class="text-neutral-light leading-relaxed mb-4">{{introObjectifs}}</p>
-                        <ul class="space-y-3">{{objectifsCommuns}}</ul>
+                    <h4 class="text-neutral-dark">{{titreObjectifs}}</h4>
+                    <div style="margin-top: 0.5rem; padding-left: 1rem; border-left: 2px solid var(--gray-200);">
+                         <p class="text-neutral-light" style="margin-bottom: 0.75rem;">{{introObjectifs}}</p>
+                        <ul style="list-style-type: none; padding-left: 0; display: flex; flex-direction: column; gap: 0.5rem;">{{objectifsCommuns}}</ul>
                     </div>
                 </div>
             </div>
         </main>
 
-        <footer class="mt-16 pt-4 border-t border-gray-200 text-center">
-            <p class="text-sm text-neutral-light">Page 3 / 9</p>
+        <footer class="page-footer">
+            <p>Page 3 / 9</p>
         </footer>
-
     </div>
-
 </body>
 </html>
