@@ -34,7 +34,6 @@ const offerData = {
         reason3_title: "Meilleur Retour sur Investissement",
         reason3_text: "Le temps que vous allez économiser et les prospects que vous n'allez plus perdre font de cette formule l'investissement le plus rentable pour votre productivité."
     },
-    // MODIFICATION ICI : Ajout de l'objet pour l'offre Croissance
     croissance: {
         name: "Site Clarté Croissance",
         price: "1299,00 €",
@@ -51,6 +50,24 @@ const offerData = {
         reason2_text: "En vous permettant de créer du contenu (blog) et de bâtir une audience (newsletter), vous investissez dans un actif marketing qui prendra de la valeur avec le temps.",
         reason3_title: "Pilotage par la Donnée",
         reason3_text: "Grâce aux outils d'analyse intégrés, vous ne naviguerez plus à l'aveugle. Vous pourrez prendre des décisions marketing basées sur des données réelles."
+    },
+    // MODIFICATION ICI : Ajout de l'objet pour l'offre SEO Local
+    'seo-local': {
+        name: "Site Clarté + SEO Local",
+        price: "1999,00 €",
+        deposit: "999,50 €",
+        objective: "vous positionner comme la référence incontournable sur Google dans votre ville.",
+        situation: `Lors de notre échange, vous avez clairement exprimé votre frustration : malgré la qualité de vos services, vous êtes "invisible sur Google" pour les clients de votre propre ville qui ne vous connaissent pas déjà.`,
+        intro_defis: "Cette invisibilité locale représente un manque à gagner significatif :",
+        challenges: `Chaque jour, des clients potentiels dans votre zone de chalandise recherchent vos services et trouvent vos concurrents.\nVous dépendez uniquement du bouche-à-oreille, ce qui rend votre croissance imprévisible et limitée.\nVotre crédibilité locale n'est pas établie en ligne, laissant le champ libre à d'autres acteurs.`,
+        intro_objectifs: "Notre collaboration visera donc à mettre en place une stratégie de domination de votre marché local :",
+        goals: `Devenir la référence incontournable pour votre métier dans votre ville sur Google.\nApparaître en tête sur Google et Google Maps lorsque des clients locaux vous cherchent.\nGénérer un flux constant de prospects qualifiés et géographiquement pertinents.`,
+        reason1_title: "Approche Hyper-Ciblée",
+        reason1_text: "C'est la seule stratégie entièrement conçue pour attirer des clients dans VOTRE zone géographique, là où se trouve votre véritable potentiel de croissance.",
+        reason2_title: "Retour sur Investissement Direct",
+        reason2_text: "Chaque client gagné grâce à votre meilleure visibilité sur Google Maps ou dans les recherches locales rentabilise directement votre investissement initial.",
+        reason3_title: "Actif Marketing Durable",
+        reason3_text: "Contrairement à la publicité, un bon référencement local est un actif qui se construit et qui génère des clients de manière continue, avec un effet cumulé dans le temps."
     }
 };
 
@@ -150,7 +167,7 @@ document.getElementById('proposal-form').addEventListener('submit', async functi
     zip.generateAsync({ type: 'blob' }).then(function(content) {
         const link = document.createElement('a');
         const safeClientName = values.nomSocieteClient.replace(/[^a-z0-9]/gi, '_').toLowerCase();
-        const safeOfferName = selectedOfferKey.charAt(0).toUpperCase() + selectedOfferKey.slice(1);
+        const safeOfferName = selectedOfferKey.replace('-', '_').toUpperCase();
         link.download = `Proposition_${safeOfferName}_${safeClientName}.zip`;
         link.href = URL.createObjectURL(content);
         document.body.appendChild(link);
