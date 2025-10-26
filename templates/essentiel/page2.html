@@ -4,70 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Introduction - Proposition pour {{nomSocieteClient}}</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
-    
-    <style>
-        body { font-family: 'Inter', sans-serif; }
-        .page {
-            width: 21cm;
-            min-height: 29.7cm;
-            padding: 2.5cm;
-            margin: 1rem auto;
-            border: 1px #D1D5DB solid;
-            background: white;
-            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-        }
-        @media print {
-            body, .page {
-                margin: 0;
-                box-shadow: none;
-                border: none;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="../css/proposal-style.css">
 </head>
-<body class="bg-gray-100">
+<body>
 
-    <div class="page flex flex-col">
+    <div class="page">
         
-        <header class="flex justify-between items-center pb-4 border-b border-gray-200">
-            <h2 class="text-2xl font-bold text-deep-blue">Introduction</h2>
+        <header class="page-header">
+            <h2 class="text-deep-blue">Introduction</h2>
             <p class="text-sm text-neutral-light">clartem.com</p>
         </header>
 
-        <main class="mt-16 text-lg leading-relaxed text-neutral-dark flex-grow">
-            <!-- MODIFICATION ICI : Remplacement de "Cher/Chère" par {{salutation}} -->
-            <h3 class="text-3xl font-bold text-neutral-dark mb-8">
+        <main style="margin-top: 3rem; flex-grow: 1;">
+            <h3 class="text-neutral-dark" style="margin-bottom: 2rem;">
                 {{salutation}} {{prenomClient}},
             </h3>
 
-            <div class="space-y-6">
-                <p>
-                    Suite à notre passionnant Appel Clarté, cette proposition détaille la solution que j'ai conçue pour répondre à votre objectif principal : 
-                    <strong class="text-clarity-blue">{{objectifPrincipal}}</strong>
-                </p>
-
-                <p>
-                    Vous trouverez dans les pages qui suivent la compréhension détaillée de vos enjeux, le périmètre précis du projet 
-                    <strong class="font-semibold">Site Clarté Essentiel</strong>, 
-                    la chronologie de notre collaboration, et l'investissement correspondant.
-                </p>
-
-                <p>
-                    Ce projet est conçu pour vous livrer un site web professionnel et efficace en seulement <strong>7 jours</strong>, transformant votre présence en ligne en un véritable outil de crédibilité.
-                </p>
-
-                <p class="mt-8 font-semibold">
-                    J'ai hâte de démarrer ce partenariat avec vous.
-                </p>
+            <div style="display: flex; flex-direction: column; gap: 1rem;">
+                <p>{{intro_page2}} <strong class="text-clarity-blue">{{objectifPrincipal}}</strong></p>
+                <p>Vous trouverez dans les pages qui suivent la compréhension détaillée de vos enjeux, le périmètre précis du projet <strong class="font-semibold">{{nomOffre}}</strong>, la chronologie de notre collaboration, et l'investissement correspondant.</p>
+                <p>Ce projet est conçu pour vous livrer un site web professionnel et efficace en seulement <strong>7 jours</strong>, transformant votre présence en ligne en un véritable outil de crédibilité.</p>
+                <p style="margin-top: 1.5rem;" class="font-semibold">J'ai hâte de démarrer ce partenariat avec vous.</p>
             </div>
         </main>
 
-        <footer class="mt-16 pt-4 border-t border-gray-200 text-center">
-            <p class="text-sm text-neutral-light">Page 2 / 9</p>
+        <footer class="page-footer">
+            <p>Page 2 / 9</p>
         </footer>
 
     </div>
