@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction - Proposition pour {{nomSocieteClient}}</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .page {
+            width: 21cm;
+            min-height: 29.7cm;
+            padding: 2.5cm;
+            margin: 1rem auto;
+            border: 1px #D1D5DB solid;
+            background: white;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+        @media print {
+            body, .page {
+                margin: 0;
+                box-shadow: none;
+                border: none;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+
+    <div class="page flex flex-col">
+        
+        <header class="flex justify-between items-center pb-4 border-b border-gray-200">
+            <h2 class="text-2xl font-bold text-deep-blue">Introduction</h2>
+            <p class="text-sm text-neutral-light">clartem.com</p>
+        </header>
+
+        <main class="mt-16 text-lg leading-relaxed text-neutral-dark flex-grow">
+            <h3 class="text-3xl font-bold text-neutral-dark mb-8">
+                {{salutation}} {{prenomClient}},
+            </h3>
+
+            <div class="space-y-6">
+                <p>
+                    Suite à notre passionnant Appel Clarté, cette proposition détaille le plan d'action que j'ai conçu pour répondre à votre ambition la plus stratégique : 
+                    <strong class="text-clarity-blue">{{objectifPrincipal}}</strong>
+                </p>
+
+                <p>
+                    Vous trouverez dans les pages qui suivent le diagnostic de votre situation actuelle, le périmètre précis de la formule
+                    <strong class="font-semibold">{{nomOffre}}</strong>, 
+                    la chronologie de notre collaboration, et l'investissement correspondant.
+                </p>
+
+                <p>
+                    Ce projet est conçu pour vous livrer une <strong>stratégie d'acquisition locale complète</strong>, transformant votre présence en ligne en un aimant à clients qualifiés dans votre zone de chalandise.
+                </p>
+
+                <p class="mt-8 font-semibold">
+                    J'ai hâte de vous aider à devenir le leader de votre marché local.
+                </p>
+            </div>
+        </main>
+
+        <footer class="mt-16 pt-4 border-t border-gray-200 text-center">
+            <p class="text-sm text-neutral-light">Page 2 / 9</p>
+        </footer>
+
+    </div>
+
+</body>
+</html>
