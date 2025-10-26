@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Remplir ici -->
-    <title>Proposition Commerciale - [Nom du Client]</title>
+    <!-- Remplacé par le placeholder -->
+    <title>Proposition Commerciale - {{nomSocieteClient}}</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -34,13 +34,10 @@
 
     <div class="page flex flex-col justify-between items-center text-center">
         
-        <!-- Section du haut : Logo Principal -->
         <header>
-            <!-- IMPORTANT : Utilisez une URL absolue de votre logo hébergé en ligne -->
             <img src="https://VOTRE_URL_COMPLETE/assets/logo-clartem.svg" alt="Logo clartem.com" class="h-20 w-auto">
         </header>
 
-        <!-- Section centrale : Titres -->
         <main class="flex flex-col items-center">
             <h1 class="text-5xl md:text-6xl font-extrabold text-deep-blue leading-tight">
                 Proposition Commerciale
@@ -51,14 +48,12 @@
             <div class="w-24 h-1 bg-clarity-blue my-12"></div>
         </main>
 
-        <!-- Section du bas : Parties Prenantes -->
         <footer class="w-full">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center text-left">
                 <div class="text-center md:text-left">
                     <p class="text-sm text-neutral-light uppercase tracking-wider">Préparé pour</p>
-                    <!-- Remplir ici : Laissez vide si pas de logo client -->
-                    <!-- <img src="[URL_LOGO_CLIENT]" alt="Logo de [Nom du Client]" class="h-12 mt-4"> -->
-                    <h3 class="mt-2 text-2xl font-bold text-neutral-dark">[Nom de la Société du Client]</h3>
+                    <!-- Remplacé par le placeholder -->
+                    <h3 class="mt-2 text-2xl font-bold text-neutral-dark">{{nomSocieteClient}}</h3>
                 </div>
                 
                 <div class="text-center md:text-right">
@@ -68,8 +63,8 @@
                 </div>
             </div>
             
-            <!-- Remplir ici -->
-            <p class="mt-16 text-center text-neutral-light">[Date de l'envoi]</p>
+            <!-- Remplacé par le placeholder -->
+            <p class="mt-16 text-center text-neutral-light">{{dateEnvoi}}</p>
         </footer>
 
     </div>
