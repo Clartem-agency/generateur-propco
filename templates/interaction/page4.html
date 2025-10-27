@@ -3,82 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Remplacé par le placeholder -->
     <title>Recommandation - Proposition pour {{nomSocieteClient}}</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
-    
-    <style>
-        body { font-family: 'Inter', sans-serif; }
-        .page {
-            width: 21cm;
-            min-height: 29.7cm;
-            padding: 2.5cm;
-            margin: 1rem auto;
-            border: 1px #D1D5DB solid;
-            background: white;
-            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-        }
-        @media print {
-            body, .page {
-                margin: 0;
-                box-shadow: none;
-                border: none;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="css/proposal-style.css">
 </head>
-<body class="bg-gray-100">
+<body>
 
-    <div class="page flex flex-col">
+    <div class="page">
         
-        <header class="flex justify-between items-center pb-4 border-b border-gray-200">
-            <h2 class="text-2xl font-bold text-deep-blue">Ma Recommandation</h2>
+        <header class="page-header">
+            <h2 class="text-deep-blue">Ma Recommandation</h2>
             <p class="text-sm text-neutral-light">clartem.com</p>
         </header>
 
-        <main class="mt-12 text-lg text-neutral-dark flex-grow">
-            
-            <h3 class="text-3xl font-bold text-neutral-dark mb-10 text-center">
-                Le Plan d'Action Idéal Pour Vous
-            </h3>
+        <main style="margin-top: 2rem; flex-grow: 1;">
+            <h3 class="text-neutral-dark" style="text-align: center; margin-bottom: 2rem;">Le Plan d'Action Idéal Pour Vous</h3>
 
-            <div class="p-8 border-2 border-clarity-blue rounded-lg bg-soft-blue text-center">
+            <div style="padding: 1.5rem; border: 2px solid var(--clarity-blue); border-radius: 8px; background-color: var(--soft-blue); text-align: center;">
                 <p class="text-neutral-light">Pour transformer votre site en un outil de productivité :</p>
-                <!-- Remplacé par le placeholder -->
-                <h4 class="mt-2 text-4xl font-extrabold text-deep-blue">{{nomOffre}}</h4>
+                <h2 style="margin-top: 0.25rem;" class="text-deep-blue">{{nomOffre}}</h2>
             </div>
 
-            <div class="mt-12">
-                <h4 class="text-xl font-bold text-neutral-dark mb-8 text-center">Pourquoi cette solution est la plus pertinente pour vous ?</h4>
-
-                <div class="space-y-8">
-                    <!-- Raison 1 -->
+            <div style="margin-top: 2.5rem;">
+                <h4 class="text-neutral-dark" style="text-align: center; margin-bottom: 2rem;">Pourquoi cette solution est la plus pertinente pour vous ?</h4>
+                <div style="display: flex; flex-direction: column; gap: 1.5rem;">
                     <div>
-                        <h4 class="text-xl font-bold text-neutral-dark">{{raison1_titre}}</h4>
-                        <p class="mt-2 text-neutral-light leading-relaxed">{{raison1_texte}}</p>
+                        <h4 class="text-neutral-dark">{{raison1_titre}}</h4>
+                        <p style="margin-top: 0.25rem;">{{raison1_texte}}</p>
                     </div>
-
-                    <!-- Raison 2 -->
                     <div>
-                        <h4 class="text-xl font-bold text-neutral-dark">{{raison2_titre}}</h4>
-                        <p class="mt-2 text-neutral-light leading-relaxed">{{raison2_texte}}</p>
+                        <h4 class="text-neutral-dark">{{raison2_titre}}</h4>
+                        <p style="margin-top: 0.25rem;">{{raison2_texte}}</p>
                     </div>
-
-                    <!-- Raison 3 -->
                     <div>
-                        <h4 class="text-xl font-bold text-neutral-dark">{{raison3_titre}}</h4>
-                        <p class="mt-2 text-neutral-light leading-relaxed">{{raison3_texte}}</p>
+                        <h4 class="text-neutral-dark">{{raison3_titre}}</h4>
+                        <p style="margin-top: 0.25rem;">{{raison3_texte}}</p>
                     </div>
                 </div>
             </div>
-
         </main>
 
-        <footer class="mt-16 pt-4 border-t border-gray-200 text-center">
-            <p class="text-sm text-neutral-light">Page 4 / 9</p>
+        <footer class="page-footer">
+            <p>Page 4 / 10</p>
         </footer>
 
     </div>
