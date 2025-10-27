@@ -82,26 +82,27 @@ strong, .font-bold { font-weight: 700; }
 
 .timeline {
     position: relative;
-    /* MODIFICATION : On supprime le padding-left qui décalait tout le bloc. */
 }
 .timeline-line {
     position: absolute;
-    left: 0.75rem; /* Centré sur le cercle de 1.5rem de large */
-    top: 0.75rem; /* MODIFICATION : On fait démarrer la ligne au centre du premier point */
-    bottom: 0.75rem; /* MODIFICATION : On arrête la ligne au centre du dernier point */
+    left: 0.75rem;
+    top: 0.75rem;
+    height: calc(100% - 1.5rem);
     width: 2px;
     background-color: var(--gray-200);
-    /* MODIFICATION : On supprime "height: 100%" qui causait le dépassement */
 }
 .timeline-item {
     position: relative;
     margin-bottom: 2rem;
-    padding-left: 3rem; /* MODIFICATION : On ajoute un padding ici pour décaler UNIQUEMENT le texte */
+    padding-left: 3rem;
+}
+.timeline-item:last-child {
+    margin-bottom: 0;
 }
 .timeline-dot {
     position: absolute;
-    left: 0.75rem; /* MODIFICATION : On positionne le point sur la ligne */
-    top: 0; /* MODIFICATION : On aligne le point avec le haut du texte pour un alignement parfait */
+    left: 0;
+    top: 0;
     width: 1.5rem;
     height: 1.5rem;
     border-radius: 9999px;
@@ -110,7 +111,6 @@ strong, .font-bold { font-weight: 700; }
     justify-content: center;
     font-weight: 700;
     font-size: 10pt;
-    transform: translateX(-50%); /* Centre le point horizontalement sur la ligne */
 }
 
 /* --- Styles pour l'impression --- */
