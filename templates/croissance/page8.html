@@ -3,103 +3,79 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mon Engagement - Proposition pour {{nomSocieteClient}}</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
-    
-    <style>
-        body { font-family: 'Inter', sans-serif; }
-        .page {
-            width: 21cm;
-            min-height: 29.7cm;
-            padding: 2.5cm;
-            margin: 1rem auto;
-            border: 1px #D1D5DB solid;
-            background: white;
-            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-        }
-        @media print {
-            body, .page {
-                margin: 0;
-                box-shadow: none;
-                border: none;
-            }
-        }
-    </style>
+    <title>Investissement - Proposition pour {{nomSocieteClient}}</title>
+    <link rel="stylesheet" href="css/proposal-style.css">
 </head>
-<body class="bg-gray-100">
+<body>
 
-    <div class="page flex flex-col">
+    <div class="page">
         
-        <header class="flex justify-between items-center pb-4 border-b border-gray-200">
-            <h2 class="text-2xl font-bold text-deep-blue">Mon Engagement Envers Votre Succès</h2>
+        <header class="page-header">
+            <h2 class="text-deep-blue">Votre Investissement</h2>
             <p class="text-sm text-neutral-light">clartem.com</p>
         </header>
 
-        <main class="mt-12 text-lg text-neutral-dark flex-grow">
-            
-            <h3 class="text-3xl font-bold text-neutral-dark mb-10 text-center">
-                Plus qu'un prestataire, un partenaire.
+        <main style="margin-top: 2rem; flex-grow: 1;">
+            <h3 class="text-neutral-dark" style="text-align: center; margin-bottom: 2rem;">
+                Une Proposition Claire et Transparente
             </h3>
-            
-            <p class="text-center text-neutral-light mb-12">
-                Mon approche est fondée sur trois piliers conçus pour vous apporter une tranquillité d'esprit totale et un résultat dont vous serez fier.
+
+            <table style="width: 100%; border-collapse: collapse;">
+                <thead>
+                    <tr style="background-color: var(--gray-100); border-bottom: 1px solid var(--gray-200);">
+                        <th style="padding: 0.75rem; text-align: left; font-size: 10pt;" class="font-semibold text-neutral-light">DESCRIPTION</th>
+                        <th style="padding: 0.75rem; text-align: right; font-size: 10pt;" class="font-semibold text-neutral-light">MONTANT HT</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr style="border-bottom: 1px solid var(--gray-100);">
+                        <td style="padding: 0.75rem;" class="font-semibold">{{nomOffre}}</td>
+                        <td style="padding: 0.75rem; text-align: right;" class="font-semibold">{{prixTotal}}</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid var(--gray-100);">
+                        <td style="padding: 0.75rem; padding-left: 2rem;" class="text-neutral-light"><span class="text-success-green">&#10003;</span> Pack Sérénité Annuel (1ère année)</td>
+                        <td style="padding: 0.75rem; text-align: right;" class="text-success-green font-semibold">Inclus</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 0.75rem; padding-left: 2rem;" class="text-neutral-light"><span class="text-success-green">&#10003;</span> Pack Conformité RGPD</td>
+                        <td style="padding: 0.75rem; text-align: right;" class="text-success-green font-semibold">Inclus</td>
+                    </tr>
+                </tbody>
+                <tfoot style="background-color: var(--soft-blue);">
+                    <tr>
+                        <td style="padding: 1rem;" class="font-bold text-deep-blue">TOTAL DE L'INVESTISSEMENT</td>
+                        <td style="padding: 1rem; text-align: right; font-size: 22px;" class="font-bold text-deep-blue">{{prixTotal}}</td>
+                    </tr>
+                </tfoot>
+            </table>
+            <p class="text-sm" style="font-size: 8pt; text-align: right; margin-top: 0.25rem;">
+                * TVA due par le preneur - Autoliquidation (art. 196 de la Directive 2006/112/CE).
             </p>
 
-            <div class="space-y-10">
-                
-                <div class="flex items-start">
-                    <div class="flex-shrink-0 w-16 h-16 bg-soft-blue text-clarity-blue rounded-full flex items-center justify-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M14 10l-2 1m0 0l-2-1m2 1v2.5M20 7l-2 1m2-1l-2-1m2 1v2.5M14 4l-2-1-2 1M4 7l2 1M4 7l2-1M4 7v2.5M12 21.5V19m0 0V8.5m0 10.5S12 11.5 10 10.5c-2 0-4 3-4 5.5s2 5.5 4 5.5c2 0 4-3 4-5.5s-2-5.5-4-5.5z" />
-                        </svg>
+            <div style="margin-top: 2.5rem;">
+                 <h4 class="text-neutral-dark" style="margin-bottom: 1rem;">Modalités de Paiement</h4>
+                 <div style="display: flex; gap: 1.5rem; background-color: var(--soft-blue); padding: 1.5rem; border-radius: 8px;">
+                    <div style="flex: 1; text-align: center;">
+                        <p class="font-bold">Acompte de 50%</p>
+                        <p style="font-size: 24px;" class="font-bold text-clarity-blue">{{prixAcompte}}</p>
+                        <p class="text-sm">À régler pour lancer officiellement le projet.</p>
                     </div>
-                    <div class="ml-6">
-                        <h4 class="text-xl font-bold text-neutral-dark">Processus Clair & Guidé</h4>
-                        <p class="mt-1 text-neutral-light leading-relaxed">
-                            Je ne vous laisse jamais dans le flou. Mon "Atelier de Clarté", ma chronologie en 7 jours et ma communication proactive sont conçus pour rendre la création de votre site simple, prévisible et même agréable. Vous savez toujours où nous en sommes et quelle est la prochaine étape.
-                        </p>
+                     <div style="flex: 1; text-align: center;">
+                        <p class="font-bold">Solde de 50%</p>
+                        <p style="font-size: 24px;" class="font-bold text-clarity-blue">{{prixAcompte}}</p>
+                        <p class="text-sm">À régler après votre validation, avant la mise en ligne.</p>
                     </div>
-                </div>
-
-                <div class="flex items-start">
-                    <div class="flex-shrink-0 w-16 h-16 bg-soft-blue text-clarity-blue rounded-full flex items-center justify-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                        </svg>
-                    </div>
-                    <div class="ml-6">
-                        <h4 class="text-xl font-bold text-neutral-dark">Offres Tout-Inclus & Transparentes</h4>
-                        <p class="mt-1 text-neutral-light leading-relaxed">
-                            Avec mes formules, vous savez exactement ce que vous obtenez et pour quel investissement. Le site, l'hébergement, la maintenance, la conformité RGPD... Tout est inclus. Zéro surprise, zéro jargon technique, zéro coût caché.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="flex items-start">
-                    <div class="flex-shrink-0 w-16 h-16 bg-soft-blue text-clarity-blue rounded-full flex items-center justify-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-                        </svg>
-                    </div>
-                    <div class="ml-6">
-                        <h4 class="text-xl font-bold text-neutral-dark">Partenaire de Votre Croissance</h4>
-                        <p class="mt-1 text-neutral-light leading-relaxed">
-                            Mon but n'est pas de vous "vendre un site", mais de vous livrer un outil qui travaille activement pour votre entreprise. Je m'investis dans la compréhension de vos objectifs pour que le résultat final soit une source de fierté et un véritable moteur pour votre activité.
-                        </p>
-                    </div>
-                </div>
-
+                 </div>
             </div>
+
+            <p class="text-sm" style="text-align: center; margin-top: 2rem;">
+                <strong>Validité de la proposition :</strong> Cette offre est valable pour une durée de 30 jours à compter de sa date d'émission.
+            </p>
         </main>
 
-        <footer class="mt-16 pt-4 border-t border-gray-200 text-center">
-            <p class="text-sm text-neutral-light">Page 8 / 9</p>
+        <footer class="page-footer">
+            <p>Page 8 / 11</p>
         </footer>
-
     </div>
-
 </body>
 </html>
