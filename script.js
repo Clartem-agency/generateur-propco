@@ -183,7 +183,7 @@ document.getElementById('proposal-form').addEventListener('submit', async functi
     // ==================================================================
 
 
-    const templateFiles = Array.from({ length: 9 }, (_, i) => `page${i + 1}.html`);
+    const templateFiles = Array.from({ length: 10 }, (_, i) => `page${i + 1}.html`);
 
     for (const fileName of templateFiles) {
         try {
