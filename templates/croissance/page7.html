@@ -15,32 +15,34 @@
             <p class="text-sm text-neutral-light">clartem.com</p>
         </header>
 
-        <!-- Marge supérieure minimale -->
-        <main style="margin-top: 1rem; flex-grow: 1;">
-            <!-- Marge inférieure et interligne du paragraphe d'intro réduits -->
-            <p style="margin-bottom: 1rem; line-height: 1.4;">En plus de la création de votre écosystème, la formule <strong class="font-semibold">{{nomOffre}}</strong> inclut deux packs essentiels pour vous garantir une sérénité totale sur les plans technique et légal.</p>
+        <main style="margin-top: 1.5rem; flex-grow: 1;">
+            <p style="margin-bottom: 2rem;">En plus de la création de votre écosystème, la formule <strong class="font-semibold">{{nomOffre}}</strong> inclut deux packs essentiels pour vous garantir une sérénité totale sur les plans technique et légal.</p>
             
-            <!-- Espacement entre les deux blocs principaux minimal -->
-            <div style="display: flex; flex-direction: column; gap: 0.75rem;">
-                <div>
+            <!-- NOUVEAU conteneur Flexbox pour la mise en page côte à côte -->
+            <div style="display: flex; gap: 2rem; align-items: flex-start;">
+
+                <!-- Colonne 1 : Pack Sérénité -->
+                <div style="flex: 1;">
                     <h4 class="text-neutral-dark" style="border-left: 3px solid var(--clarity-blue); padding-left: 0.75rem;">Pack Sérénité (1ère Année Incluse)</h4>
-                    <!-- Marge et espacement dans la liste (gap) minimaux -->
-                    <ul style="margin-top: 0.5rem; padding-left: 1rem; list-style: none; display: flex; flex-direction: column; gap: 0.25rem;">
-                        <li style="display: flex;"><span class="text-success-green" style="margin-right: 0.75rem; font-size: 1.2rem; line-height: 1.4;">&#10003;</span><div><strong class="font-semibold">Hébergement Premium & Sécurisé</strong><p class="text-sm" style="line-height: 1.4;">Pour garantir un site rapide, toujours disponible et qui inspire confiance.</p></div></li>
-                        <li style="display: flex;"><span class="text-success-green" style="margin-right: 0.75rem; font-size: 1.2rem; line-height: 1.4;">&#10003;</span><div><strong class="font-semibold">Maintenance Technique Continue</strong><p class="text-sm" style="line-height: 1.4;">Pour protéger votre investissement contre les pannes et les menaces.</p></div></li>
-                        <li style="display: flex;"><span class="text-success-green" style="margin-right: 0.75rem; font-size: 1.2rem; line-height: 1.4;">&#10003;</span><div><strong class="font-semibold">Gestion du Nom de Domaine</strong><p class="text-sm" style="line-height: 1.4;">Pour vous libérer des complexités et ne jamais risquer de perdre votre adresse.</p></div></li>
-                        <li style="display: flex;"><span class="text-success-green" style="margin-right: 0.75rem; font-size: 1.2rem; line-height: 1.4;">&#10003;</span><div><strong class="font-semibold">Configuration de l'E-mail Professionnel</strong><p class="text-sm" style="line-height: 1.4;">Pour renforcer votre crédibilité et professionnaliser vos échanges.</p></div></li>
+                    <ul style="margin-top: 0.75rem; padding-left: 0; list-style: none; display: flex; flex-direction: column; gap: 0.75rem;">
+                        <li style="display: flex;"><span class="text-success-green" style="margin-right: 0.5rem;">&#10003;</span><div><strong class="font-semibold">Hébergement Premium & Sécurisé</strong><p class="text-sm">Pour garantir un site rapide, toujours disponible et qui inspire confiance.</p></div></li>
+                        <li style="display: flex;"><span class="text-success-green" style="margin-right: 0.5rem;">&#10003;</span><div><strong class="font-semibold">Maintenance Technique Continue</strong><p class="text-sm">Pour protéger votre investissement contre les pannes et les menaces.</p></div></li>
+                        <li style="display: flex;"><span class="text-success-green" style="margin-right: 0.5rem;">&#10003;</span><div><strong class="font-semibold">Gestion du Nom de Domaine</strong><p class="text-sm">Pour vous libérer des complexités et ne jamais risquer de perdre votre adresse.</p></div></li>
+                        <li style="display: flex;"><span class="text-success-green" style="margin-right: 0.5rem;">&#10003;</span><div><strong class="font-semibold">Configuration de l'E-mail Professionnel</strong><p class="text-sm">Pour renforcer votre crédibilité et professionnaliser vos échanges.</p></div></li>
                     </ul>
                 </div>
-                <div>
+
+                <!-- Colonne 2 : Pack Conformité RGPD -->
+                <div style="flex: 1;">
                     <h4 class="text-neutral-dark" style="border-left: 3px solid var(--clarity-blue); padding-left: 0.75rem;">Pack Conformité RGPD (Inclus)</h4>
-                    <ul style="margin-top: 0.5rem; padding-left: 1rem; list-style: none; display: flex; flex-direction: column; gap: 0.25rem;">
-                        <li style="display: flex;"><span class="text-success-green" style="margin-right: 0.75rem; font-size: 1.2rem; line-height: 1.4;">&#10003;</span><div><strong class="font-semibold">Génération des Pages Légales</strong><p class="text-sm" style="line-height: 1.4;">Création et intégration de vos pages Mentions Légales et Politique de Confidentialité.</p></div></li>
-                        <li style="display: flex;"><span class="text-success-green" style="margin-right: 0.75rem; font-size: 1.2rem; line-height: 1.4;">&#10003;</span><div><strong class="font-semibold">Module de Consentement (Bandeau Cookie)</strong><p class="text-sm" style="line-height: 1.4;">Installation et configuration pour permettre à vos visiteurs de gérer leurs préférences.</p></div></li>
-                        <li style="display: flex;"><span class="text-success-green" style="margin-right: 0.75rem; font-size: 1.2rem; line-height: 1.4;">&#10003;</span><div><strong class="font-semibold">Formulaires Conformes</strong><p class="text-sm" style="line-height: 1.4;">Ajout des cases à cocher et mentions nécessaires sur tous vos formulaires de collecte de données.</p></div></li>
-                        <li style="display: flex;"><span class="text-success-green" style="margin-right: 0.75rem; font-size: 1.2rem; line-height: 1.4;">&#10003;</span><div><strong class="font-semibold">Accord de Traitement des Données (DPA)</strong><p class="text-sm" style="line-height: 1.4;">Un document légal qui clarifie nos rôles et responsabilités respectifs concernant les données.</p></div></li>
+                    <ul style="margin-top: 0.75rem; padding-left: 0; list-style: none; display: flex; flex-direction: column; gap: 0.75rem;">
+                        <li style="display: flex;"><span class="text-success-green" style="margin-right: 0.5rem;">&#10003;</span><div><strong class="font-semibold">Génération des Pages Légales</strong><p class="text-sm">Création et intégration de vos pages Mentions Légales et Politique de Confidentialité.</p></div></li>
+                        <li style="display: flex;"><span class="text-success-green" style="margin-right: 0.5rem;">&#10003;</span><div><strong class="font-semibold">Module de Consentement (Bandeau Cookie)</strong><p class="text-sm">Installation et configuration pour permettre à vos visiteurs de gérer leurs préférences.</p></div></li>
+                        <li style="display: flex;"><span class="text-success-green" style="margin-right: 0.5rem;">&#10003;</span><div><strong class="font-semibold">Formulaires Conformes</strong><p class="text-sm">Ajout des cases à cocher et mentions nécessaires sur tous vos formulaires.</p></div></li>
+                        <li style="display: flex;"><span class="text-success-green" style="margin-right: 0.5rem;">&#10003;</span><div><strong class="font-semibold">Accord de Traitement des Données (DPA)</strong><p class="text-sm">Un document légal qui clarifie nos rôles et responsabilités respectifs.</p></div></li>
                     </ul>
                 </div>
+
             </div>
         </main>
 
