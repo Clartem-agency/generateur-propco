@@ -15,21 +15,22 @@
             <p class="text-sm text-neutral-light">clartem.com</p>
         </header>
 
-        <!-- Marge supérieure du contenu principal réduite -->
-        <main style="margin-top: 1.5rem; flex-grow: 1;">
-            <!-- Marge inférieure du titre principal fortement réduite -->
-            <h3 class="text-neutral-dark" style="margin-bottom: 1.5rem;">
+        <!-- Marge supérieure minimale -->
+        <main style="margin-top: 1rem; flex-grow: 1;">
+            <!-- Marge inférieure du titre minimale -->
+            <h3 class="text-neutral-dark" style="margin-bottom: 1.25rem;">
                 Vos Défis et Vos Ambitions
             </h3>
 
-            <!-- Espacement entre les 3 blocs principaux réduit -->
-            <div style="display: flex; flex-direction: column; gap: 1.25rem;">
+            <!-- Espacement entre les blocs principaux minimal -->
+            <div style="display: flex; flex-direction: column; gap: 1rem;">
 
                 <!-- Bloc 1: La Situation Actuelle -->
                 <div>
                     <h4 class="text-neutral-dark">La Situation Actuelle</h4>
                     <div style="margin-top: 0.25rem; padding-left: 1rem; border-left: 2px solid var(--gray-200);">
-                        <p>{{situationActuelle}}</p>
+                        <!-- Interligne réduit pour compacter le texte -->
+                        <p style="line-height: 1.5;">{{situationActuelle}}</p>
                     </div>
                 </div>
 
@@ -37,8 +38,9 @@
                 <div>
                     <h4 class="text-neutral-dark">{{titreDefis}}</h4>
                     <div style="margin-top: 0.25rem; padding-left: 1rem; border-left: 2px solid var(--gray-200);">
-                        <p style="margin-bottom: 0.5rem;">{{introDefis}}</p>
-                        <ul style="list-style-type: none; padding-left: 0; display: flex; flex-direction: column; gap: 0.4rem;">
+                        <p style="margin-bottom: 0.5rem; line-height: 1.5;">{{introDefis}}</p>
+                        <ul style="list-style-type: none; padding-left: 0; display: flex; flex-direction: column; gap: 0.25rem;">
+                            <!-- L'interligne est déjà géré par la balise <li> dans le CSS, mais on s'assure que le gap est minimal -->
                             {{defisConcrets}}
                         </ul>
                     </div>
@@ -48,8 +50,8 @@
                 <div>
                     <h4 class="text-neutral-dark">{{titreObjectifs}}</h4>
                     <div style="margin-top: 0.25rem; padding-left: 1rem; border-left: 2px solid var(--gray-200);">
-                         <p style="margin-bottom: 0.5rem;">{{introObjectifs}}</p>
-                        <ul style="list-style-type: none; padding-left: 0; display: flex; flex-direction: column; gap: 0.4rem;">
+                         <p style="margin-bottom: 0.5rem; line-height: 1.5;">{{introObjectifs}}</p>
+                        <ul style="list-style-type: none; padding-left: 0; display: flex; flex-direction: column; gap: 0.25rem;">
                             {{objectifsCommuns}}
                         </ul>
                     </div>
