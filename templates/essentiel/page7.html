@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Investissement - Proposition pour {{nomSocieteClient}}</title>
+    <title>Chronologie - Proposition pour {{nomSocieteClient}}</title>
     <link rel="stylesheet" href="css/proposal-style.css">
 </head>
 <body>
@@ -11,63 +11,53 @@
     <div class="page">
         
         <header class="page-header">
-            <h2 class="text-deep-blue">Votre Investissement</h2>
+            <h2 class="text-deep-blue">Notre Calendrier Prévisionnel</h2>
             <p class="text-sm text-neutral-light">clartem.com</p>
         </header>
 
         <main style="margin-top: 2rem; flex-grow: 1;">
-            <h3 class="text-neutral-dark" style="text-align: center; margin-bottom: 2rem;">Une Proposition Claire et Transparente</h3>
+            <h3 class="text-neutral-dark" style="text-align: center; margin-bottom: 2.5rem;">Votre Site en 7 Jours : Un Processus Clair</h3>
 
-            <table style="width: 100%; border-collapse: collapse;">
-                <thead>
-                    <tr style="background-color: var(--gray-100); border-bottom: 1px solid var(--gray-200);">
-                        <th style="padding: 0.75rem; text-align: left; font-size: 10pt;" class="font-semibold text-neutral-light">DESCRIPTION</th>
-                        <th style="padding: 0.75rem; text-align: right; font-size: 10pt;" class="font-semibold text-neutral-light">MONTANT HT</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr style="border-bottom: 1px solid var(--gray-100);">
-                        <td style="padding: 0.75rem;" class="font-semibold">{{nomOffre}}</td>
-                        <td style="padding: 0.75rem; text-align: right;" class="font-semibold">{{prixTotal}}</td>
-                    </tr>
-                    <tr style="border-bottom: 1px solid var(--gray-100);">
-                        <td style="padding: 0.75rem; padding-left: 2rem;" class="text-neutral-light"><span class="text-success-green">&#10003;</span> Pack Sérénité Annuel (1ère année)</td>
-                        <td style="padding: 0.75rem; text-align: right;" class="text-success-green font-semibold">Inclus</td>
-                    </tr>
-                    <tr>
-                        <td style="padding: 0.75rem; padding-left: 2rem;" class="text-neutral-light"><span class="text-success-green">&#10003;</span> Pack Conformité RGPD</td>
-                        <td style="padding: 0.75rem; text-align: right;" class="text-success-green font-semibold">Inclus</td>
-                    </tr>
-                </tbody>
-                <tfoot style="background-color: var(--soft-blue);">
-                    <tr>
-                        <td style="padding: 1rem;" class="font-bold text-deep-blue">TOTAL DE L'INVESTISSEMENT</td>
-                        <td style="padding: 1rem; text-align: right; font-size: 22px;" class="font-bold text-deep-blue">{{prixTotal}}</td>
-                    </tr>
-                </tfoot>
-            </table>
-            <p class="text-sm" style="font-size: 8pt; text-align: right; margin-top: 0.25rem;">* TVA non applicable, art. 293 B du CGI.</p>
+            <div class="timeline">
+                <div class="timeline-line"></div>
 
-            <div style="margin-top: 2.5rem;">
-                 <h4 class="text-neutral-dark" style="margin-bottom: 1rem;">Modalités de Paiement</h4>
-                 <div style="display: flex; gap: 1.5rem; background-color: var(--soft-blue); padding: 1rem; border-radius: 8px;">
-                    <div style="flex: 1; text-align: center;">
-                        <p class="font-bold">Acompte de 50%</p>
-                        <p style="font-size: 24px;" class="font-bold text-clarity-blue">{{prixAcompte}}</p>
-                        <p class="text-sm">À régler pour lancer le projet.</p>
+                <div class="timeline-item">
+                    <div class="timeline-dot bg-clarity-blue text-white">1</div>
+                    <h4 class="text-neutral-dark">Jours 1-2 : Lancement & Votre Contribution</h4>
+                    <div class="text-sm" style="margin-top: 0.25rem;">
+                        <p><span class="font-semibold text-deep-blue">MON ACTION :</span> Envoi de votre "Atelier de Clarté" dès réception de l'acompte.</p>
+                        <p><strong class="font-semibold text-warm-orange">VOTRE ACTION :</strong> Remplissage de l'Atelier pour fournir le contenu.</p>
                     </div>
-                     <div style="flex: 1; text-align: center;">
-                        <p class="font-bold">Solde de 50%</p>
-                        <p style="font-size: 24px;" class="font-bold text-clarity-blue">{{prixAcompte}}</p>
-                        <p class="text-sm">À régler avant la mise en ligne.</p>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot bg-clarity-blue text-white">2</div>
+                    <h4 class="text-neutral-dark">Jours 3-5 : Création</h4>
+                    <p class="text-sm" style="margin-top: 0.25rem;"><span class="font-semibold text-deep-blue">MON ACTION :</span> Conception du design sur-mesure et développement de la première version complète de votre site web.</p>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-dot bg-clarity-blue text-white">3</div>
+                    <h4 class="text-neutral-dark">Jour 6 : Validation & Retours</h4>
+                    <div class="text-sm" style="margin-top: 0.25rem;">
+                        <p><span class="font-semibold text-deep-blue">MON ACTION :</span> Envoi du lien de prévisualisation privé pour découvrir votre nouveau site.</p>
+                        <p><strong class="font-semibold text-warm-orange">VOTRE ACTION :</strong> Fournir vos retours et demandes d'ajustements.</p>
                     </div>
-                 </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot bg-success-green text-white">&#10003;</div>
+                    <h4 class="text-neutral-dark">Jour 7 : Finalisation & Lancement</h4>
+                    <div class="text-sm" style="margin-top: 0.25rem;">
+                        <p><span class="font-semibold text-deep-blue">MON ACTION :</span> Application des ajustements finaux.</p>
+                        <p><strong class="font-semibold text-success-green">ACTION COMMUNE :</strong> Paiement du solde et mise en ligne officielle de votre site.</p>
+                    </div>
+                </div>
             </div>
-            <p class="text-sm" style="text-align: center; margin-top: 2rem;"><strong>Validité de la proposition :</strong> 30 jours à compter de sa date d'émission.</p>
         </main>
 
         <footer class="page-footer">
-            <p>Page 7 / 9</p>
+            <p>Page 6 / 9</p>
         </footer>
     </div>
 </body>
