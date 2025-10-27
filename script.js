@@ -2,6 +2,7 @@
 const offerData = {
     essentiel: {
         name: "Site Clarté Essentiel",
+        pageCount: 10, // <-- AJOUT : Nombre de pages
         price: "799,00 €",
         deposit: "399,50 €",
         intro_page2: "Suite à notre passionnant Appel Clarté, cette proposition détaille la solution que j'ai conçue pour répondre à votre objectif principal :",
@@ -22,6 +23,7 @@ const offerData = {
     },
     interaction: {
         name: "Site Clarté Interaction",
+        pageCount: 10, // <-- AJOUT : Nombre de pages
         price: "999,00 €",
         deposit: "499,50 €",
         intro_page2: "Suite à notre passionnant Appel Clarté, cette proposition détaille la solution que j'ai conçue pour répondre à votre objectif principal :",
@@ -42,6 +44,7 @@ const offerData = {
     },
     croissance: {
         name: "Site Clarté Croissance",
+        pageCount: 11, // <-- AJOUT ET MODIFICATION : Nombre de pages
         price: "1299,00 €",
         deposit: "649,50 €",
         intro_page2: "Suite à notre passionnant Appel Clarté, cette proposition détaille la stratégie que j'ai conçue pour répondre à votre ambition principale :",
@@ -62,6 +65,7 @@ const offerData = {
     },
     'seo-local': {
         name: "Site Clarté + SEO Local",
+        pageCount: 10, // <-- AJOUT : Nombre de pages (à vérifier si c'est le bon nombre)
         price: "1999,00 €",
         deposit: "999,50 €",
         intro_page2: "Suite à notre passionnant Appel Clarté, cette proposition détaille le plan d'action que j'ai conçu pour répondre à votre ambition la plus stratégique :",
@@ -162,10 +166,6 @@ document.getElementById('proposal-form').addEventListener('submit', async functi
 
     const zip = new JSZip();
 
-    // ==================================================================
-    //                  *** DÉBUT DE LA CORRECTION ***
-    // On charge le fichier CSS et on l'ajoute au zip dans un dossier "css"
-    // ==================================================================
     try {
         const cssResponse = await fetch('css/proposal-style.css');
         if (!cssResponse.ok) throw new Error('Fichier css/proposal-style.css introuvable.');
@@ -178,12 +178,23 @@ document.getElementById('proposal-form').addEventListener('submit', async functi
         generateBtn.disabled = false;
         return;
     }
+
+    // ==================================================================
+    //                  *** DÉBUT DE LA CORRECTION ***
+    // On récupère le nombre de pages dynamiquement depuis l'objet de l'offre
+    // ==================================================================
+    const pageCount = currentOfferData.pageCount;
+    if (!pageCount) {
+        alert(`Erreur de configuration: Le nombre de pages (pageCount) n'est pas défini pour l'offre "${selectedOfferKey}".`);
+        generateBtn.textContent = 'Générer la Proposition (.zip)';
+        generateBtn.disabled = false;
+        return;
+    }
+    const templateFiles = Array.from({ length: pageCount }, (_, i) => `page${i + 1}.html`);
     // ==================================================================
     //                   *** FIN DE LA CORRECTION ***
     // ==================================================================
 
-
-    const templateFiles = Array.from({ length: 10 }, (_, i) => `page${i + 1}.html`);
 
     for (const fileName of templateFiles) {
         try {
@@ -198,9 +209,10 @@ document.getElementById('proposal-form').addEventListener('submit', async functi
             zip.file(fileName, content);
         } catch (error) {
             console.error(error);
-            alert(`Une erreur est survenue: ${error.message}. Vérifiez la console.`);
+            // On s'assure que le bouton est réactivé même en cas d'erreur dans la boucle
             generateBtn.textContent = 'Générer la Proposition (.zip)';
             generateBtn.disabled = false;
+            // On arrête l'exécution si un fichier est manquant
             return;
         }
     }
