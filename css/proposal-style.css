@@ -82,26 +82,25 @@ strong, .font-bold { font-weight: 700; }
 
 .timeline {
     position: relative;
+    /* padding-left: 2rem;  <-- MODIFICATION : On supprime cette ligne */
 }
 .timeline-line {
     position: absolute;
-    left: 0.75rem;
+    left: 0.75rem; /* Centré sur le cercle de 1.5rem */
+    top: 0;
+    height: 100%;
     width: 2px;
     background-color: var(--gray-200);
-    /* MODIFICATION : On fait démarrer la ligne au centre du 1er point */
-    top: 0.75rem;
-    /* MODIFICATION : On la raccourcit de la hauteur d'un point pour qu'elle finisse au centre du dernier */
-    height: calc(100% - 1.5rem);
 }
 .timeline-item {
     position: relative;
     margin-bottom: 2rem;
-    padding-left: 3rem; 
+    padding-left: 3rem; /* <-- MODIFICATION : On ajoute du padding pour repousser le texte */
 }
 .timeline-dot {
     position: absolute;
-    left: 0.75rem;
-    top: 0;
+    left: 0.75rem; /* <-- MODIFICATION : On positionne le point sur la ligne */
+    top: 4px;
     width: 1.5rem;
     height: 1.5rem;
     border-radius: 9999px;
@@ -110,8 +109,7 @@ strong, .font-bold { font-weight: 700; }
     justify-content: center;
     font-weight: 700;
     font-size: 10pt;
-    /* MODIFICATION : Valeur ajustée pour un alignement vertical parfait */
-    transform: translate(-50%, 5px); 
+    transform: translateX(-50%);
 }
 
 /* --- Styles pour l'impression --- */
