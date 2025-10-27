@@ -3,106 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chronologie - Proposition pour {{nomSocieteClient}}</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
-    
-    <style>
-        body { font-family: 'Inter', sans-serif; }
-        .page {
-            width: 21cm;
-            min-height: 29.7cm;
-            padding: 2.5cm;
-            margin: 1rem auto;
-            border: 1px #D1D5DB solid;
-            background: white;
-            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-        }
-        @media print {
-            body, .page {
-                margin: 0;
-                box-shadow: none;
-                border: none;
-            }
-        }
-    </style>
+    <title>Périmètre du Projet (Suite) - Proposition pour {{nomSocieteClient}}</title>
+    <link rel="stylesheet" href="css/proposal-style.css">
 </head>
-<body class="bg-gray-100">
+<body>
 
-    <div class="page flex flex-col">
+    <div class="page">
         
-        <header class="flex justify-between items-center pb-4 border-b border-gray-200">
-            <h2 class="text-2xl font-bold text-deep-blue">Notre Calendrier Prévisionnel</h2>
+        <header class="page-header">
+            <h2 class="text-deep-blue">Périmètre du Projet (Suite)</h2>
             <p class="text-sm text-neutral-light">clartem.com</p>
         </header>
 
-        <main class="mt-12 text-lg text-neutral-dark flex-grow">
+        <main style="margin-top: 1.5rem; flex-grow: 1;">
+            <p style="margin-bottom: 2rem;">La création de votre écosystème se poursuit avec les fonctionnalités suivantes, axées sur la conversion et la croissance :</p>
             
-            <h3 class="text-3xl font-bold text-neutral-dark mb-10 text-center">
-                Votre Écosystème en 7 Jours : Un Processus Clair
-            </h3>
-
-            <div class="relative pl-8">
-                <div class="absolute left-8 top-0 h-full w-0.5 bg-gray-200"></div>
-
-                <div class="relative mb-8">
-                    <div class="absolute left-0 top-1.5 w-8 h-8 bg-clarity-blue rounded-full text-white flex items-center justify-center font-bold text-sm transform -translate-x-1/2 -ml-0.5">1</div>
-                    <div class="ml-8">
-                        <h4 class="font-bold text-neutral-dark">Jours 1-2 : Lancement & Votre Contribution</h4>
-                        <div class="mt-2 text-sm text-neutral-light space-y-2">
-                            <p><span class="font-semibold text-deep-blue">MON ACTION :</span> Envoi de votre "Atelier de Clarté" dès réception de l'acompte.</p>
-                            <p><strong class="font-semibold text-warm-orange">VOTRE ACTION :</strong> Remplissage de l'Atelier pour fournir le contenu (textes, images, logo).</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="relative mb-8">
-                    <div class="absolute left-0 top-1.5 w-8 h-8 bg-clarity-blue rounded-full text-white flex items-center justify-center font-bold text-sm transform -translate-x-1/2 -ml-0.5">2</div>
-                    <div class="ml-8">
-                        <h4 class="font-bold text-neutral-dark">Jours 3-5 : Création</h4>
-                        <div class="mt-2 text-sm text-neutral-light space-y-2">
-                             <p><span class="font-semibold text-deep-blue">MON ACTION :</span> Conception du design et développement de la première version de votre site et de ses outils marketing.</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="relative mb-8">
-                    <div class="absolute left-0 top-1.5 w-8 h-8 bg-clarity-blue rounded-full text-white flex items-center justify-center font-bold text-sm transform -translate-x-1/2 -ml-0.5">3</div>
-                    <div class="ml-8">
-                        <h4 class="font-bold text-neutral-dark">Jour 6 : Validation & Retours</h4>
-                        <div class="mt-2 text-sm text-neutral-light space-y-2">
-                            <p><span class="font-semibold text-deep-blue">MON ACTION :</span> Envoi du lien de prévisualisation privé pour découvrir votre nouvel écosystème.</p>
-                            <p><strong class="font-semibold text-warm-orange">VOTRE ACTION :</strong> Fournir vos retours et demandes d'ajustements (une seule phase groupée).</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="relative">
-                    <div class="absolute left-0 top-1.5 w-8 h-8 bg-success-green rounded-full text-white flex items-center justify-center transform -translate-x-1/2 -ml-0.5">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
-                        </svg>
-                    </div>
-                    <div class="ml-8">
-                        <h4 class="font-bold text-neutral-dark">Jour 7 : Finalisation & Lancement</h4>
-                        <div class="mt-2 text-sm text-neutral-light space-y-2">
-                            <p><span class="font-semibold text-deep-blue">MON ACTION :</span> Application des ajustements finaux.</p>
-                            <p><strong class="font-semibold text-green-700">ACTION COMMUNE :</strong> Paiement du solde et mise en ligne officielle de votre site. Félicitations !</p>
-                        </div>
-                    </div>
-                </div>
-
+            <div>
+                <h3 class="text-neutral-dark" style="border-left: 3px solid var(--clarity-blue); padding-left: 0.75rem; margin-bottom: 1.5rem;">Fonctionnalités de Croissance</h3>
+                <ul style="padding-left: 1rem; list-style: none; display: flex; flex-direction: column; gap: 1rem;">
+                    <li style="display: flex;"><span class="text-success-green" style="margin-right: 0.75rem; font-size: 1.2rem; line-height: 1.4;">&#10003;</span><div><strong class="font-semibold">Section "Passez à l'action" dédiée</strong><p class="text-sm">Pour guider vos visiteurs vers la conversion.</p></div></li>
+                    <li style="display: flex;"><span class="text-success-green" style="margin-right: 0.75rem; font-size: 1.2rem; line-height: 1.4;">&#10003;</span><div><strong class="font-semibold">Boutons d'appel à l'action (CTA) stratégiques</strong><p class="text-sm">Pour maximiser vos prises de contact.</p></div></li>
+                    <li style="display: flex;"><span class="text-success-green" style="margin-right: 0.75rem; font-size: 1.2rem; line-height: 1.4;">&#10003;</span><div><strong class="font-semibold">Intégration d'un outil d'emailing</strong><p class="text-sm">Pour construire et fidéliser votre propre audience.</p></div></li>
+                    <li style="display: flex;"><span class="text-success-green" style="margin-right: 0.75rem; font-size: 1.2rem; line-height: 1.4;">&#10003;</span><div><strong class="font-semibold">Mise en place d'une pop-up de capture d'emails</strong><p class="text-sm">Pour transformer vos visiteurs en prospects qualifiés.</p></div></li>
+                    <li style="display: flex;"><span class="text-success-green" style="margin-right: 0.75rem; font-size: 1.2rem; line-height: 1.4;">&#10003;</span><div><strong class="font-semibold">Ajout d'une section "Actualités" / "Blog"</strong><p class="text-sm">Pour partager votre expertise et améliorer votre SEO.</p></div></li>
+                    <li style="display: flex;"><span class="text-success-green" style="margin-right: 0.75rem; font-size: 1.2rem; line-height: 1.4;">&#10003;</span><div><strong class="font-semibold">Configuration des outils d'analyse</strong><p class="text-sm">Pour mesurer vos résultats et prendre des décisions éclairées.</p></div></li>
+                </ul>
             </div>
-
         </main>
 
-        <footer class="mt-16 pt-4 border-t border-gray-200 text-center">
-            <p class="text-sm text-neutral-light">Page 6 / 9</p>
+        <footer class="page-footer">
+            <p>Page 6 / 11</p>
         </footer>
-
     </div>
-
 </body>
 </html>
