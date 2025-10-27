@@ -86,10 +86,12 @@ strong, .font-bold { font-weight: 700; }
 .timeline-line {
     position: absolute;
     left: 0.75rem;
-    top: 0;
-    height: 100%;
     width: 2px;
     background-color: var(--gray-200);
+    /* MODIFICATION : On fait démarrer la ligne au centre du 1er point */
+    top: 0.75rem;
+    /* MODIFICATION : On la raccourcit de la hauteur d'un point pour qu'elle finisse au centre du dernier */
+    height: calc(100% - 1.5rem);
 }
 .timeline-item {
     position: relative;
@@ -99,7 +101,7 @@ strong, .font-bold { font-weight: 700; }
 .timeline-dot {
     position: absolute;
     left: 0.75rem;
-    top: 0; /* On positionne le haut du cercle avec le haut du texte */
+    top: 0;
     width: 1.5rem;
     height: 1.5rem;
     border-radius: 9999px;
@@ -108,8 +110,8 @@ strong, .font-bold { font-weight: 700; }
     justify-content: center;
     font-weight: 700;
     font-size: 10pt;
-    /* On combine le centrage horizontal ET le décalage vertical ici */
-    transform: translate(-50%, 3px); 
+    /* MODIFICATION : Valeur ajustée pour un alignement vertical parfait */
+    transform: translate(-50%, 5px); 
 }
 
 /* --- Styles pour l'impression --- */
