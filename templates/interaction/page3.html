@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Diagnostic - Proposition pour {{nomSocieteClient}}</title>
-    <link rel="stylesheet" href="proposal-style.css">
+    <link rel="stylesheet" href="css/proposal-style.css">
 </head>
 <body>
 
@@ -28,17 +28,16 @@
                     </div>
                 </div>
 
-                <!-- Les Défis -->
+                <!-- Défis -->
                 <div>
                     <h4 class="text-neutral-dark">{{titreDefis}}</h4>
                     <div style="margin-top: 0.5rem; padding-left: 1rem; border-left: 2px solid var(--gray-200);">
                         <p class="text-neutral-light" style="margin-bottom: 0.75rem;">{{introDefis}}</p>
-                        <!-- La structure de la liste est reprise du modèle "Essentiel" -->
                         <ul style="list-style-type: none; padding-left: 0; display: flex; flex-direction: column; gap: 0.5rem;">{{defisConcrets}}</ul>
                     </div>
                 </div>
 
-                <!-- Les Objectifs Clés -->
+                <!-- Objectifs -->
                 <div>
                     <h4 class="text-neutral-dark">{{titreObjectifs}}</h4>
                     <div style="margin-top: 0.5rem; padding-left: 1rem; border-left: 2px solid var(--gray-200);">
@@ -55,6 +54,5 @@
         </footer>
 
     </div>
-
 </body>
 </html>
