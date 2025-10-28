@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Diagnostic (Suite) - Proposition pour {{nomSocieteClient}}</title>
+    <title>Notre Mission - Proposition pour {{nomSocieteClient}}</title>
     <link rel="stylesheet" href="css/proposal-style.css">
 </head>
 <body>
@@ -11,33 +11,26 @@
     <div class="page">
         
         <header class="page-header">
-            <h2 class="text-deep-blue">Notre Diagnostic (Suite)</h2>
+            <h2 class="text-deep-blue">Notre Mission & Vos Objectifs</h2>
             <p class="text-sm text-neutral-light">clartem.com</p>
         </header>
 
         <main style="margin-top: 2rem; flex-grow: 1;">
-            
-            <div style="display: flex; flex-direction: column; gap: 2rem;">
+            <h3 class="text-neutral-dark" style="margin-bottom: 1.5rem;">
+                Transformer les Défis en Opportunités
+            </h3>
 
-                <!-- Bloc 3: Les Objectifs (Notre Mission) -->
+            <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+
+                <!-- Bloc 3: Les Objectifs Clés -->
                 <div>
                     <h4 class="text-neutral-dark">{{titreObjectifs}}</h4>
-                    <p style="margin-top: 0.5rem; margin-bottom: 1rem;">{{introObjectifs}}</p>
-                    <ul style="list-style-type: none; padding-left: 0; display: flex; flex-direction: column; gap: 0.75rem;">
-                        <!-- {{objectifsCommuns}} sera remplacé par des li comme ci-dessous -->
-                        <li style="display: flex; align-items: flex-start;">
-                            <span class="text-success-green" style="margin-right: 0.75rem; font-size: 1.1rem; line-height: 1.6;">&#10003;</span>
-                            <div>Devenir la référence incontournable pour votre métier dans votre ville sur Google.</div>
-                        </li>
-                        <li style="display: flex; align-items: flex-start;">
-                            <span class="text-success-green" style="margin-right: 0.75rem; font-size: 1.1rem; line-height: 1.6;">&#10003;</span>
-                            <div>Apparaître en tête sur Google et Google Maps lorsque des clients locaux vous cherchent.</div>
-                        </li>
-                        <li style="display: flex; align-items: flex-start;">
-                            <span class="text-success-green" style="margin-right: 0.75rem; font-size: 1.1rem; line-height: 1.6;">&#10003;</span>
-                            <div>Générer un flux constant de prospects qualifiés et géographiquement pertinents.</div>
-                        </li>
-                    </ul>
+                    <div style="margin-top: 0.5rem; padding-left: 1rem; border-left: 2px solid var(--gray-200);">
+                         <p style="margin-bottom: 0.75rem;">{{introObjectifs}}</p>
+                        <ul style="list-style-type: none; padding-left: 0; display: flex; flex-direction: column; gap: 0.5rem;">
+                            {{objectifsCommuns}}
+                        </ul>
+                    </div>
                 </div>
             </div>
         </main>
