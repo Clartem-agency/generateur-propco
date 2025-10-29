@@ -2,7 +2,7 @@
 const offerData = {
     essentiel: {
         name: "Site Clarté Essentiel",
-        pageCount: 10, // <-- AJOUT : Nombre de pages
+        pageCount: 11, // <-- AJOUT : Nombre de pages
         price: "799,00 €",
         deposit: "399,50 €",
         intro_page2: "Suite à notre passionnant Appel Clarté, cette proposition détaille la solution que j'ai conçue pour répondre à votre objectif principal :",
@@ -44,7 +44,7 @@ const offerData = {
     },
     croissance: {
         name: "Site Clarté Croissance",
-        pageCount: 11, // <-- AJOUT ET MODIFICATION : Nombre de pages
+        pageCount: 12, // <-- AJOUT ET MODIFICATION : Nombre de pages
         price: "1299,00 €",
         deposit: "649,50 €",
         intro_page2: "Suite à notre passionnant Appel Clarté, cette proposition détaille la stratégie que j'ai conçue pour répondre à votre ambition principale :",

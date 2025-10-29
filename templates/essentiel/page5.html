@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Périmètre du Projet - Proposition pour {{nomSocieteClient}}</title>
+    <title>Recommandation - Proposition pour {{nomSocieteClient}}</title>
     <link rel="stylesheet" href="css/proposal-style.css">
 </head>
 <body>
@@ -11,28 +11,42 @@
     <div class="page">
         
         <header class="page-header">
-            <h2 class="text-deep-blue">Le Contenu de Notre Collaboration</h2>
+            <h2 class="text-deep-blue">Ma Recommandation</h2>
             <p class="text-sm text-neutral-light">clartem.com</p>
         </header>
 
-        <main style="margin-top: 1.5rem; flex-grow: 1;">
-            <p style="margin-bottom: 2rem;">Pour garantir une transparence totale, voici la liste exhaustive de tous les services et livrables inclus dans la formule <strong class="font-semibold">{{nomOffre}}</strong>.</p>
-            
-            <div>
-                <h3 class="text-neutral-dark" style="border-left: 3px solid var(--clarity-blue); padding-left: 0.75rem; margin-bottom: 1.5rem;">Création de Votre Site Web</h3>
-                <ul style="padding-left: 1rem; list-style: none; display: flex; flex-direction: column; gap: 1rem;">
-                    <li style="display: flex;"><span class="text-success-green" style="margin-right: 0.75rem; font-size: 1.2rem; line-height: 1.4;">&#10003;</span><div><strong class="font-semibold">Site Clarté complet (one-page, 5 sections)</strong><p class="text-sm">Une page unique et fluide pour présenter votre activité de A à Z.</p></div></li>
-                    <li style="display: flex;"><span class="text-success-green" style="margin-right: 0.75rem; font-size: 1.2rem; line-height: 1.4;">&#10003;</span><div><strong class="font-semibold">Design 100% personnalisé</strong><p class="text-sm">Une conception sur-mesure qui reflète votre identité de marque.</p></div></li>
-                    <li style="display: flex;"><span class="text-success-green" style="margin-right: 0.75rem; font-size: 1.2rem; line-height: 1.4;">&#10003;</span><div><strong class="font-semibold">Conception "Responsive"</strong><p class="text-sm">Une expérience de visite parfaite sur mobiles, tablettes et ordinateurs.</p></div></li>
-                    <li style="display: flex;"><span class="text-success-green" style="margin-right: 0.75rem; font-size: 1.2rem; line-height: 1.4;">&#10003;</span><div><strong class="font-semibold">Formulaire de contact fonctionnel</strong><p class="text-sm">Pour permettre à vos prospects de vous joindre facilement 24/7.</p></div></li>
-                    <li style="display: flex;"><span class="text-success-green" style="margin-right: 0.75rem; font-size: 1.2rem; line-height: 1.4;">&#10003;</span><div><strong class="font-semibold">Optimisation SEO technique de base</strong><p class="text-sm">Pour construire des fondations saines et être bien interprété par Google.</p></div></li>
-                </ul>
+        <main style="margin-top: 2rem; flex-grow: 1;">
+            <h3 class="text-neutral-dark" style="text-align: center; margin-bottom: 2rem;">Le Plan d'Action Idéal Pour Vous</h3>
+
+            <div style="padding: 1.5rem; border: 2px solid var(--clarity-blue); border-radius: 8px; background-color: var(--soft-blue); text-align: center;">
+                <p class="text-neutral-light">Pour atteindre vos objectifs de la manière la plus directe et efficace :</p>
+                <h2 style="margin-top: 0.25rem;" class="text-deep-blue">{{nomOffre}}</h2>
+            </div>
+
+            <div style="margin-top: 2.5rem;">
+                <h4 class="text-neutral-dark" style="text-align: center; margin-bottom: 2rem;">Pourquoi cette solution est la plus pertinente pour vous ?</h4>
+                <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+                    <div>
+                        <h4 class="text-neutral-dark">{{raison1_titre}}</h4>
+                        <p style="margin-top: 0.25rem;">{{raison1_texte}}</p>
+                    </div>
+                    <div>
+                        <h4 class="text-neutral-dark">{{raison2_titre}}</h4>
+                        <p style="margin-top: 0.25rem;">{{raison2_texte}}</p>
+                    </div>
+                    <div>
+                        <h4 class="text-neutral-dark">{{raison3_titre}}</h4>
+                        <p style="margin-top: 0.25rem;">{{raison3_texte}}</p>
+                    </div>
+                </div>
             </div>
         </main>
 
         <footer class="page-footer">
-            <p>Page 5 / 10</p>
+            <p>Page 5 / 11</p>
         </footer>
+
     </div>
+
 </body>
 </html>

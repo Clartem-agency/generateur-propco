@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mon Engagement - Proposition pour {{nomSocieteClient}}</title>
+    <title>Investissement - Proposition pour {{nomSocieteClient}}</title>
     <link rel="stylesheet" href="css/proposal-style.css">
 </head>
 <body>
@@ -11,32 +11,63 @@
     <div class="page">
         
         <header class="page-header">
-            <h2 class="text-deep-blue">Mon Engagement Envers Votre Succès</h2>
+            <h2 class="text-deep-blue">Votre Investissement</h2>
             <p class="text-sm text-neutral-light">clartem.com</p>
         </header>
 
         <main style="margin-top: 2rem; flex-grow: 1;">
-            <h3 class="text-neutral-dark" style="text-align: center;">Plus qu'un prestataire, un partenaire.</h3>
-            <p style="text-align: center; max-width: 80%; margin: 0.5rem auto 2.5rem auto;">Mon approche est fondée sur trois piliers conçus pour vous apporter une tranquillité d'esprit totale et un résultat dont vous serez fier.</p>
+            <h3 class="text-neutral-dark" style="text-align: center; margin-bottom: 2rem;">Une Proposition Claire et Transparente</h3>
 
-            <div style="display: flex; flex-direction: column; gap: 2rem;">
-                <div>
-                    <h4 class="text-neutral-dark">Processus Clair & Guidé</h4>
-                    <p style="margin-top: 0.25rem;">Je ne vous laisse jamais dans le flou. Mon "Atelier de Clarté", ma chronologie en 7 jours et ma communication proactive sont conçus pour rendre la création de votre site simple, prévisible et même agréable. Vous savez toujours où nous en sommes et quelle est la prochaine étape.</p>
-                </div>
-                <div>
-                    <h4 class="text-neutral-dark">Offres Tout-Inclus & Transparentes</h4>
-                    <p style="margin-top: 0.25rem;">Avec mes formules, vous savez exactement ce que vous obtenez et pour quel investissement. Le site, l'hébergement, la maintenance, la conformité RGPD... Tout est inclus. Zéro surprise, zéro jargon technique, zéro coût caché.</p>
-                </div>
-                <div>
-                    <h4 class="text-neutral-dark">Partenaire de Votre Croissance</h4>
-                    <p style="margin-top: 0.25rem;">Mon but n'est pas de vous "vendre un site", mais de vous livrer un outil qui travaille activement pour votre entreprise. Je m'investis dans la compréhension de vos objectifs pour que le résultat final soit une source de fierté et un véritable moteur pour votre activité.</p>
-                </div>
+            <table style="width: 100%; border-collapse: collapse;">
+                <thead>
+                    <tr style="background-color: var(--gray-100); border-bottom: 1px solid var(--gray-200);">
+                        <th style="padding: 0.75rem; text-align: left; font-size: 10pt;" class="font-semibold text-neutral-light">DESCRIPTION</th>
+                        <th style="padding: 0.75rem; text-align: right; font-size: 10pt;" class="font-semibold text-neutral-light">MONTANT HT</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr style="border-bottom: 1px solid var(--gray-100);">
+                        <td style="padding: 0.75rem;" class="font-semibold">{{nomOffre}}</td>
+                        <td style="padding: 0.75rem; text-align: right;" class="font-semibold">{{prixTotal}}</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid var(--gray-100);">
+                        <td style="padding: 0.75rem; padding-left: 2rem;" class="text-neutral-light"><span class="text-success-green">&#10003;</span> Pack Sérénité Annuel (1ère année)</td>
+                        <td style="padding: 0.75rem; text-align: right;" class="text-success-green font-semibold">Inclus</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 0.75rem; padding-left: 2rem;" class="text-neutral-light"><span class="text-success-green">&#10003;</span> Pack Conformité RGPD</td>
+                        <td style="padding: 0.75rem; text-align: right;" class="text-success-green font-semibold">Inclus</td>
+                    </tr>
+                </tbody>
+                <tfoot style="background-color: var(--soft-blue);">
+                    <tr>
+                        <td style="padding: 1rem;" class="font-bold text-deep-blue">TOTAL DE L'INVESTISSEMENT</td>
+                        <td style="padding: 1rem; text-align: right; font-size: 22px;" class="font-bold text-deep-blue">{{prixTotal}}</td>
+                    </tr>
+                </tfoot>
+            </table>
+            <p class="text-sm" style="font-size: 8pt; text-align: right; margin-top: 0.25rem;">* TVA due par le preneur - Autoliquidation (art. 196 de la Directive 2006/112/CE).</p>
+
+            <div style="margin-top: 2.5rem;">
+                 <h4 class="text-neutral-dark" style="margin-bottom: 1rem;">Modalités de Paiement</h4>
+                 <div style="display: flex; gap: 1.5rem; background-color: var(--soft-blue); padding: 1rem; border-radius: 8px;">
+                    <div style="flex: 1; text-align: center;">
+                        <p class="font-bold">Acompte de 50%</p>
+                        <p style="font-size: 24px;" class="font-bold text-clarity-blue">{{prixAcompte}}</p>
+                        <p class="text-sm">À régler pour lancer le projet.</p>
+                    </div>
+                     <div style="flex: 1; text-align: center;">
+                        <p class="font-bold">Solde de 50%</p>
+                        <p style="font-size: 24px;" class="font-bold text-clarity-blue">{{prixAcompte}}</p>
+                        <p class="text-sm">À régler avant la mise en ligne.</p>
+                    </div>
+                 </div>
             </div>
+            <p class="text-sm" style="text-align: center; margin-top: 2rem;"><strong>Validité de la proposition :</strong> 30 jours à compter de sa date d'émission.</p>
         </main>
 
         <footer class="page-footer">
-            <p>Page 9 / 10</p>
+            <p>Page 9 / 11</p>
         </footer>
     </div>
 </body>

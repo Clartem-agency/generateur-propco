@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Recommandation - Proposition pour {{nomSocieteClient}}</title>
+    <title>Notre Mission - Proposition pour {{nomSocieteClient}}</title>
     <link rel="stylesheet" href="css/proposal-style.css">
 </head>
 <body>
@@ -11,45 +11,32 @@
     <div class="page">
         
         <header class="page-header">
-            <!-- Le titre est spécifique à l'offre Croissance, ce qui est parfait -->
-            <h2 class="text-deep-blue">Ma Recommandation Stratégique</h2>
+            <h2 class="text-deep-blue">Notre Mission & Vos Objectifs</h2>
             <p class="text-sm text-neutral-light">clartem.com</p>
         </header>
 
         <main style="margin-top: 2rem; flex-grow: 1;">
-            <h3 class="text-neutral-dark" style="text-align: center; margin-bottom: 2rem;">
-                La Stratégie Pour Votre Croissance
+            <h3 class="text-neutral-dark" style="margin-bottom: 1.5rem;">
+                Transformer les Défis en Opportunités
             </h3>
 
-            <div style="padding: 1.5rem; border: 2px solid var(--clarity-blue); border-radius: 8px; background-color: var(--soft-blue); text-align: center;">
-                <p class="text-neutral-light">Pour transformer votre site en un moteur d'acquisition de clients :</p>
-                <!-- J'ai utilisé un h2 comme dans les autres modèles pour la cohérence hiérarchique -->
-                <h2 style="margin-top: 0.25rem;" class="text-deep-blue">{{nomOffre}}</h2>
-            </div>
+            <div style="display: flex; flex-direction: column; gap: 1.5rem;">
 
-            <div style="margin-top: 2.5rem;">
-                <h4 class="text-neutral-dark" style="text-align: center; margin-bottom: 2rem;">
-                    Pourquoi cette stratégie est la plus pertinente pour vous ?
-                </h4>
-                <div style="display: flex; flex-direction: column; gap: 1.5rem;">
-                    <div>
-                        <h4 class="text-neutral-dark">{{raison1_titre}}</h4>
-                        <p style="margin-top: 0.25rem;">{{raison1_texte}}</p>
-                    </div>
-                    <div>
-                        <h4 class="text-neutral-dark">{{raison2_titre}}</h4>
-                        <p style="margin-top: 0.25rem;">{{raison2_texte}}</p>
-                    </div>
-                    <div>
-                        <h4 class="text-neutral-dark">{{raison3_titre}}</h4>
-                        <p style="margin-top: 0.25rem;">{{raison3_texte}}</p>
+                <!-- Bloc 3: Les Objectifs Clés -->
+                <div>
+                    <h4 class="text-neutral-dark">{{titreObjectifs}}</h4>
+                    <div style="margin-top: 0.5rem; padding-left: 1rem; border-left: 2px solid var(--gray-200);">
+                         <p style="margin-bottom: 0.75rem;">{{introObjectifs}}</p>
+                        <ul style="list-style-type: none; padding-left: 0; display: flex; flex-direction: column; gap: 0.5rem;">
+                            {{objectifsCommuns}}
+                        </ul>
                     </div>
                 </div>
             </div>
         </main>
 
         <footer class="page-footer">
-            <p>Page 4 / 11</p>
+            <p>Page 4 / 12</p>
         </footer>
 
     </div>
