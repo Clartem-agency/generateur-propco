@@ -23,7 +23,7 @@ const offerData = {
     },
     interaction: {
         name: "Site Clarté Interaction",
-        pageCount: 10, // <-- AJOUT : Nombre de pages
+        pageCount: 11, // <-- AJOUT : Nombre de pages
         price: "999,00 €",
         deposit: "499,50 €",
         intro_page2: "Suite à notre passionnant Appel Clarté, cette proposition détaille la solution que j'ai conçue pour répondre à votre objectif principal :",
