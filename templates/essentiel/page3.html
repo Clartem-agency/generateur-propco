@@ -16,10 +16,13 @@
         </header>
 
         <main style="margin-top: 2rem; flex-grow: 1;">
-            <h3 class="text-neutral-dark" style="margin-bottom: 2.5rem;">Vos Défis et Vos Ambitions</h3>
+            <h3 class="text-neutral-dark" style="margin-bottom: 1.5rem;">
+                Vos Défis et Vos Ambitions
+            </h3>
 
             <div style="display: flex; flex-direction: column; gap: 2rem;">
-                <!-- Situation Actuelle -->
+
+                <!-- Bloc 1: La Situation Actuelle -->
                 <div>
                     <h4 class="text-neutral-dark">La Situation Actuelle</h4>
                     <div style="margin-top: 0.5rem; padding-left: 1rem; border-left: 2px solid var(--gray-200);">
@@ -27,29 +30,25 @@
                     </div>
                 </div>
 
-                <!-- Défis -->
+                <!-- Bloc 2: Les Défis -->
                 <div>
                     <h4 class="text-neutral-dark">{{titreDefis}}</h4>
                     <div style="margin-top: 0.5rem; padding-left: 1rem; border-left: 2px solid var(--gray-200);">
-                        <p class="text-neutral-light" style="margin-bottom: 0.75rem;">{{introDefis}}</p>
-                        <ul style="list-style-type: none; padding-left: 0; display: flex; flex-direction: column; gap: 0.5rem;">{{defisConcrets}}</ul>
+                        <p style="margin-bottom: 0.75rem;">{{introDefis}}</p>
+                        <ul style="list-style-type: none; padding-left: 0; display: flex; flex-direction: column; gap: 0.5rem;">
+                            {{defisConcrets}}
+                        </ul>
                     </div>
                 </div>
 
-                <!-- Objectifs -->
-                <div>
-                    <h4 class="text-neutral-dark">{{titreObjectifs}}</h4>
-                    <div style="margin-top: 0.5rem; padding-left: 1rem; border-left: 2px solid var(--gray-200);">
-                         <p class="text-neutral-light" style="margin-bottom: 0.75rem;">{{introObjectifs}}</p>
-                        <ul style="list-style-type: none; padding-left: 0; display: flex; flex-direction: column; gap: 0.5rem;">{{objectifsCommuns}}</ul>
-                    </div>
-                </div>
             </div>
         </main>
 
         <footer class="page-footer">
-            <p>Page 3 / 10</p>
+            <p>Page 3 / 11</p>
         </footer>
+
     </div>
+
 </body>
 </html>
