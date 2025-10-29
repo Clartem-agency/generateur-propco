@@ -65,7 +65,7 @@ const offerData = {
     },
     'seo-local': {
         name: "Site Clarté + SEO Local",
-        pageCount: 10, // <-- AJOUT : Nombre de pages (à vérifier si c'est le bon nombre)
+        pageCount: 13, // <-- AJOUT : Nombre de pages (à vérifier si c'est le bon nombre)
         price: "1999,00 €",
         deposit: "999,50 €",
         intro_page2: "Suite à notre passionnant Appel Clarté, cette proposition détaille le plan d'action que j'ai conçu pour répondre à votre ambition la plus stratégique :",
