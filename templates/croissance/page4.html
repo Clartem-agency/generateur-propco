@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notre Mission - Proposition pour {{nomSocieteClient}}</title>
+    <link rel="stylesheet" href="css/proposal-style.css">
+</head>
+<body>
+
+    <div class="page">
+        
+        <header class="page-header">
+            <h2 class="text-deep-blue">Notre Mission & Vos Objectifs</h2>
+            <p class="text-sm text-neutral-light">clartem.com</p>
+        </header>
+
+        <main style="margin-top: 2rem; flex-grow: 1;">
+            <h3 class="text-neutral-dark" style="margin-bottom: 1.5rem;">
+                Transformer les Défis en Opportunités
+            </h3>
+
+            <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+
+                <!-- Bloc 3: Les Objectifs Clés -->
+                <div>
+                    <h4 class="text-neutral-dark">{{titreObjectifs}}</h4>
+                    <div style="margin-top: 0.5rem; padding-left: 1rem; border-left: 2px solid var(--gray-200);">
+                         <p style="margin-bottom: 0.75rem;">{{introObjectifs}}</p>
+                        <ul style="list-style-type: none; padding-left: 0; display: flex; flex-direction: column; gap: 0.5rem;">
+                            {{objectifsCommuns}}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer class="page-footer">
+            <p>Page 4 / 12</p>
+        </footer>
+
+    </div>
+
+</body>
+</html>
